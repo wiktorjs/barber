@@ -1,0 +1,19 @@
+.section__about {
+
+    display: grid;
+    grid-template-rows: repeat(2, min-content) 5fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+
+    @include section;
+}
+
+.section__service {
+    height: 73rem;
+    
+    @include section;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}

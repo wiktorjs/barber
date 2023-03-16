@@ -1,0 +1,20 @@
+{
+  "name": "barber",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "Wiktor Sienkiewicz",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.3",
+    "autoprefixer": "^10.4.13",
+    "concat": "^1.0.3",
+    "npm-run-all": "^4.1.5",
+    "parcel": "^2.8.3",
+    "postcss-cli": "^10.1.0"
+  }
+}

@@ -1,0 +1,91 @@
+.btn {
+  &,
+  &:link,
+  &:visited {
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    display: inline-block;
+    font-weight: 400;
+    padding: 1rem 1rem 0.8rem;
+    border-radius: 100px;
+    box-shadow: 0 .1rem .3rem rgba(0,0,0, .15);
+    
+    transition: background-color, color, box-shadow, 0.4s ease;
+  }
+
+  &:focus,
+  &:hover {
+    outline: none;
+    transform: translateY(-2px);
+    box-shadow: 0 .1rem .5rem rgba(0,0,0, .1);
+  } 
+
+  // * ADDITIONAL STYLES
+
+  // White button
+  &--white {
+    background-color: $color-primary;
+    border: 1px solid $color-primary;
+    color: $color-secondary-dark;
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      color: $color-primary;
+    }
+
+    &-outline {
+      border: 1px solid $color-primary;
+      color: $color-primary;
+
+      &:hover,
+      &:focus {
+        background-color: $color-primary;
+        color: $color-secondary-dark;
+      }
+    }
+  }
+  // Square Button
+  &.btn--square { // Selecting class to increase selector specificity
+    text-transform: none;
+    border-radius: 0;
+    border-bottom: 1px solid currentColor; 
+    padding-bottom: .5rem;
+    color: $color-secondary-light;
+    box-shadow: none;
+
+    &:focus,
+    &:hover {
+      transform: translateY(0);
+      color: $color-tertiary-dark-2;
+    }
+  }
+
+  &.btn-tertiary {
+    color: $color-secondary-dark;
+    text-transform: none;
+    border-color: currentColor;
+    border-radius: 5px;
+    
+    &:focus,
+    &:hover {
+      color: $color-tertiary-dark-2;
+    }
+  }
+
+  // * BUTTON ICONS
+  &__icon-arrow {
+    margin-left: 0.5rem;
+    display: inline-block;
+    color: currentColor;
+    transition: transform 0.2s .4s ease;
+  }
+
+  &:hover &__icon-arrow,
+  &:focus &__icon-arrow {
+    transform: translateX(5px);
+  }
+}
+
+

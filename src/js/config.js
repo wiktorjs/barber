@@ -1,0 +1,3 @@
+const SLIDE_DURATION = 30;
+
+export {SLIDE_DURATION}

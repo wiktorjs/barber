@@ -1,0 +1,154 @@
+.nav {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  z-index: 100;
+
+  padding: 3rem;
+  border-top: 3px solid $color-primary;
+
+  & > * {
+    flex: 0 0 33%;
+  }
+
+  &__box {
+    align-self: flex-start;
+
+    &-list {
+      list-style: none;
+    }
+
+    &-item {
+      text-decoration: none;
+
+      &:not(:last-child) {
+        margin-bottom: 0.3rem;
+      }
+    }
+
+    &-link,
+    &-link:link,
+    &-link:visited {
+      display: inline-block;
+
+      font-size: 1.4rem;
+      font-weight: 100;
+      text-transform: uppercase;
+      text-decoration: none;
+      letter-spacing: 0.3rem;
+
+      color: $color-primary;
+      border-bottom: 0.5px solid transparent;
+
+      text-shadow: $tshadow-s;
+      transition: transform, border-bottom, color, 0.3s ease;
+    }
+
+    &-link:hover,
+    &-link:focus {
+      outline: none;
+      transform: translateX(2rem);
+      color: $color-tertiary;
+      border-bottom: 0.5px solid currentColor;
+    }
+  }
+
+  &__logo-box {
+    text-align: center;
+
+    p {
+      color: $color-primary;
+      font-size: 1rem;
+      letter-spacing: 0.2rem;
+      font-weight: 300;
+      text-shadow: $tshadow-s;
+    }
+
+    p:first-of-type {
+      margin-bottom: -0.3rem;
+    }
+
+    p:last-of-type {
+      margin-top: -0.6rem;
+    }
+  }
+
+  &__contact-box p {
+    color: $color-primary;
+    text-align: end;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.3rem;
+    text-shadow: $tshadow-s;
+  }
+
+  // ! STICKY & MOBILE NAV
+  &--sticky {
+    display: block;
+    position: fixed;
+    width: calc(100% - 6rem);
+    top: 0;
+    left: 3rem;
+
+    padding: 1rem 5rem;
+    background-color: rgba($color-primary, 0.9);
+    border: none;
+    border-bottom: 1px solid $color-secondary-light;
+    z-index: 200;
+
+    transition: transform 0.3s ease;
+
+    & .nav {
+      &__logo-box {
+        display: none;
+      }
+
+      &__contact-box {
+        display: none;
+      }
+
+      &__box {
+
+        &-list {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 3rem;
+
+          & p { // ? "logo"
+            margin-right: 2rem;
+
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: 0.6rem;
+          }
+
+          &:last-child {
+            margin-right: 3rem;
+          }
+        }
+
+        &-item:not(:last-child) {
+          margin-bottom: 0;
+        }
+
+        &-link {
+          color: $color-secondary-dark;
+          font-weight: 400;
+          text-shadow: none;
+
+          &:hover,
+          &:focus {
+            color: $color-tertiary-dark-2;
+            transform: translateX(5px);
+          }
+        }
+      }
+    }
+  }
+}
+
+.nav--hidden {
+  transform: translateY(-100%);
+}
