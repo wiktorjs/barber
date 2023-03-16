@@ -1,0 +1,82 @@
+// | whole carousel div
+.carousel {
+  height: 75%;
+  width: 75%;
+  overflow: hidden;
+  position: relative;
+}
+
+// | each slide
+.slide-box {
+  height: 100%;
+  width: 100%;
+
+  position: absolute;
+  transition: transform 0.5s 0.1s ease;
+
+  & > * { // ? all direct childern
+    position: absolute;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0% 25%;
+
+    filter: brightness(0.5);
+  }
+
+  &__content {
+    bottom: 0;
+    padding: 4rem;
+
+    &-text {
+      font-size: 1.9rem;
+      color: $color-primary;
+      width: 75%;
+      bottom: 0;
+
+      text-shadow: $tshadow-s;
+    }
+  }
+}
+
+// | Status bar div
+.slide-status-bar {
+  bottom: 0;
+  position: absolute;
+  height: 0.5rem;
+  width: 100%;
+  background-color: $color-tertiary-dark-2;
+
+  transform: translateX(-100%);
+}
+
+.slide__arrow-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  
+  height: 6rem; width: 6rem;
+  color: $color-tertiary-dark-2;
+  fill: $color-tertiary-dark-2;
+  opacity: 0.5;
+
+  line-height: 0.5;
+  cursor: pointer;
+
+  transition: opacity 0.2s ease;
+
+  &--left {
+    left: 2rem;
+  }
+
+  &--right {
+    right: 2rem;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}

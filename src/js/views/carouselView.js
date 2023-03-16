@@ -3,9 +3,9 @@ import { wait } from "../helpers.js";
 
 // ! Carousel
 class CarouselView {
-  _parentEl = document.querySelector(".service__carousel");
-  _slides = document.querySelectorAll(".service-box");
-  _statusBar = document.querySelector(".service__status-bar");
+  _parentEl = document.querySelector(".carousel");
+  _slides = document.querySelectorAll(".slide-box");
+  _statusBar = document.querySelector(".slide-status-bar");
   _curSlide = 0;
   _interval = setInterval(() => this._nextSlide(), SLIDE_DURATION * 1000);
 
@@ -33,6 +33,7 @@ class CarouselView {
     this._statusBar.style.animation = `move-status-bar ${SLIDE_DURATION}s infinite linear`;
   }
 
+  // |  ===== SLIDE CHANGES =====
   /**
    * Translates slides to display the one we want, usually take _curSlide variable as an argument
    * @param {number} slide defines to which slide you want to go, counting from 0
@@ -68,11 +69,10 @@ class CarouselView {
    */
   switchSlide() {
     this._parentEl.addEventListener("click", (e) => {
-      const arrow = e.target.closest(".slide-arrow");
+      const arrow = e.target.closest(".slide__arrow-icon");
       if (!arrow) return;
 
-      // console.log(arrow);
-      arrow.classList.contains("slide-arrow--left")
+      arrow.classList.contains("slide__arrow-icon--left")
         ? this._prevSlide()
         : this._nextSlide();
       //

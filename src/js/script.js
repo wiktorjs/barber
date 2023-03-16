@@ -1,7 +1,7 @@
 import { SLIDE_DURATION } from "./config.js";
 import carouselView from "./views/carouselView.js";
 
-// ! NAVIGATION
+// ! ===== NAVIGATION =====
 const controlNavigation = function () {
   const header = document.getElementById("header");
   const stickyNav = document.querySelector(".nav--sticky");
@@ -23,6 +23,7 @@ const controlNavigation = function () {
   headerObserver.observe(header);
 };
 
+// ! ===== SLIDES =====
 const controlSlides = function() {
   carouselView.switchSlide();
 };
@@ -33,3 +34,9 @@ const init = function () {
 };
 init();
 
+const map = L.map('map', {
+  center: [51.505, -0.09],
+  zoom: 13
+});
+
+console.log(map)

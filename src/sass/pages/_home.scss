@@ -9,7 +9,7 @@
 }
 
 .section__service {
-    height: 73rem;
+    height: 75rem;
     
     @include section;
    display: flex;
@@ -17,3 +17,13 @@
    justify-content: center;
    align-items: center;
 }
+
+.section__location {
+    height: 50rem;
+
+    @include section;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+

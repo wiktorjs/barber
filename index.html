@@ -8,7 +8,9 @@
     <meta name="description" content="" />
 
     <title></title>
+    <!-- <link rel="icon" type="image/png" href="./src/img/favicon.png" /> -->
 
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,7 +18,18 @@
       rel="stylesheet"
     />
 
-    <!-- <link rel="icon" type="image/png" href="./src/img/favicon.png" /> -->
+    <!-- Libraries -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+      crossorigin=""
+    />
+    <script defer src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+    crossorigin=""></script>
+
+    <!-- Own -->
     <link rel="stylesheet" href="./src/sass/main.scss" />
 
     <script
@@ -197,16 +210,16 @@
       <section id="services" class="section__service">
         <h2 class="u-mb-m">Nasze najpopularniejsze usługi</h2>
 
-        <div class="service__carousel">
-          <div class="service-box">
+        <div class="carousel">
+          <div class="slide-box">
             <img
-              class="service-box__slide"
+              class="slide-box__img"
               src="./src/img/service1.jpg"
               alt="service photo"
             />
-            <div class="service-box--content">
-              <h4 class="service-box--content-heading">Strzyżenie</h4>
-              <p class="service-box--content-text">
+            <div class="slide-box__content">
+              <h4 class="slide-box__content-heading">Strzyżenie</h4>
+              <p class="slide-box__content-text">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est
                 esse iure optio eveniet eius ut laboriosam vero, molestias
                 asperiores laborum. Rerum ipsam maxime quidem vitae dolor
@@ -215,15 +228,15 @@
             </div>
           </div>
 
-          <div class="service-box">
+          <div class="slide-box">
             <img
-              class="service-box__slide"
+              class="slide-box__img"
               src="./src/img/service2.jpg"
               alt="service photo"
             />
-            <div class="service-box--content">
-              <h4 class="service-box--content-heading">SPA</h4>
-              <p class="service-box--content-text">
+            <div class="slide-box__content">
+              <h4 class="slide-box__content-heading">SPA</h4>
+              <p class="slide-box__content-text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
                 esse magnam, vel repudiandae ducimus amet non cum at mollitia
                 eaque modi accusantium eum!
@@ -231,15 +244,15 @@
             </div>
           </div>
 
-          <div class="service-box">
+          <div class="slide-box">
             <img
-              class="service-box__slide"
+              class="slide-box__img"
               src="./src/img/service3.jpg"
               alt="service photo"
             />
-            <div class="service-box--content">
-              <h4 class="service-box--content-heading">Paznokcie</h4>
-              <p class="service-box--content-text">
+            <div class="slide-box__content">
+              <h4 class="slide-box__content-heading">Paznokcie</h4>
+              <p class="slide-box__content-text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Molestiae molestias consequatur sint atque fugiat, quisquam
                 beatae fugit saepe nihil quod ullam asperiores, nobis magni
@@ -247,15 +260,27 @@
               </p>
             </div>
           </div>
-          <div class="service__status-bar"></div>
-          <span class="slide-arrow slide-arrow--left">&larr;</span>
-          <span class="slide-arrow slide-arrow--right">&rarr;</span>
+          <div class="slide-status-bar"></div>
+
+          <svg class="slide__arrow-icon slide__arrow-icon--left">
+            <use href="./src/img/icons.svg#icon-arrow-left"></use>
+          </svg>
+
+          <svg class="slide__arrow-icon slide__arrow-icon--right">
+            <use href="./src/img/icons.svg#icon-arrow-right"></use>
+          </svg>
         </div>
 
         <a class="btn btn--white-outline btn-tertiary u-mt-m" href="#"
           >Zobacz wszystkie usługi<span class="btn__icon-arrow">&rarr;</span></a
         >
-        
+      </section>
+
+      <section class="section__location">
+        <div class="map" id="map"></div>
+        <div class="info">
+          <p>abc</p>
+        </div>
       </section>
     </main>
 
