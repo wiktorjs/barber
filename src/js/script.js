@@ -23,16 +23,13 @@ const controlNavigation = function () {
   headerObserver.observe(header);
 };
 
-// ! SLIDES
-const controlSlides = function () {
-  // | Display slide every SLIDE_DURATION seconds
-  setInterval(() => carouselView.changeSlides(), SLIDE_DURATION * 1000);
+const controlSlides = function() {
+  carouselView.switchSlide();
 };
-
 
 const init = function () {
   controlNavigation();
   controlSlides();
-  // carouselView.addHandlerNextSlide();
 };
 init();
+

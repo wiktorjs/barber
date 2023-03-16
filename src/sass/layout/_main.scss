@@ -83,7 +83,7 @@
 // * === SERVICE SECTION ===
 
 .service-box {
-  height: 99%;
+  height: 100%;
   width: 100%;
 
   position: absolute;
@@ -131,6 +131,9 @@
   height: 0.5rem;
   width: 100%;
   background-color: $color-tertiary-dark-2;
+
+  transform: translateX(-100%);
+
 }
 
 .slide-arrow {
@@ -149,11 +152,11 @@
   transition: opacity .2s ease;
   
   &--left {
-    left: 1rem;
+    left: 2rem;
   }
 
   &--right {
-    right: 1rem;
+    right: 2rem;
   }
 
   &:hover {
