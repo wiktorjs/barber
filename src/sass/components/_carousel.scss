@@ -1,12 +1,16 @@
-// | whole carousel div
+// | ===== COMMON PARENT =====
 .carousel {
   height: 75%;
   width: 75%;
   overflow: hidden;
   position: relative;
+  border-radius: 5px;
+  
+  box-shadow: $bshadow-s;
+  
 }
 
-// | each slide
+// | ===== EACH SLIDE =====
 .slide-box {
   height: 100%;
   width: 100%;
@@ -42,41 +46,72 @@
   }
 }
 
-// | Status bar div
+// | ===== STATUS BAR =====
 .slide-status-bar {
   bottom: 0;
   position: absolute;
   height: 0.5rem;
   width: 100%;
-  background-color: $color-tertiary-dark-2;
+  background-color: $color-tertiary;
 
   transform: translateX(-100%);
 }
 
-.slide__arrow-icon {
+// | ===== ARROW ICONS =====
+
+.carousel__icon-box {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  
-  height: 6rem; width: 6rem;
-  color: $color-tertiary-dark-2;
-  fill: $color-tertiary-dark-2;
-  opacity: 0.5;
 
-  line-height: 0.5;
-  cursor: pointer;
+  display: flex;
+  align-items: center;
 
-  transition: opacity 0.2s ease;
+  opacity: .5;
 
-  &--left {
-    left: 2rem;
-  }
-
-  &--right {
-    right: 2rem;
-  }
+  transition: transform, opacity, .1s ease-in;
 
   &:hover {
     opacity: 1;
   }
+
+  &--left {
+    left: 1.5rem;
+
+    &:hover {
+      transform: translateX(-2px) translateY(-50%);
+    }
+
+    &:active {
+      transform: translateX(-3px) translateY(-50%);
+    }
+  }
+
+  &--right {
+    right: 1.5rem;
+
+    &:hover {
+      transform: translateX(2px) translateY(-50%);
+    }
+
+    &:active {
+      transform: translateX(3px) translateY(-50%);
+    }
+  }
 }
+
+.slide__arrow-icon {
+  display: inline-block;
+  position: relative;
+  
+  height: 6rem; width: 6rem;
+  color: $color-tertiary;
+  fill: $color-tertiary;
+
+  line-height: 0.5;
+  cursor: pointer;
+
+  transition: opacity, transform, 0.2s ease;
+
+}
+

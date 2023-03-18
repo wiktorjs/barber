@@ -8,9 +8,9 @@
     display: inline-block;
     font-weight: 400;
     padding: 1rem 1rem 0.8rem;
-    border-radius: 100px;
-    box-shadow: 0 .1rem .3rem rgba(0,0,0, .15);
-    
+    border-radius: 5px;
+    box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.15);
+
     transition: background-color, color, box-shadow, 0.4s ease;
   }
 
@@ -18,12 +18,12 @@
   &:hover {
     outline: none;
     transform: translateY(-2px);
-    box-shadow: 0 .1rem .5rem rgba(0,0,0, .1);
-  } 
+    box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.1);
+  }
 
-  // * ADDITIONAL STYLES
+  // ? ===== ADDITIONAL STYLES =====
 
-  // White button
+  // | White button
   &--white {
     background-color: $color-primary;
     border: 1px solid $color-primary;
@@ -46,46 +46,63 @@
       }
     }
   }
-  // Square Button
-  &.btn--square { // Selecting class to increase selector specificity
+  // | Square Button
+  &.btn--square {
+    // | Selecting class to increase selector specificity
     text-transform: none;
     border-radius: 0;
-    border-bottom: 1px solid currentColor; 
-    padding-bottom: .5rem;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 0.5rem;
     color: $color-secondary-light;
     box-shadow: none;
 
     &:focus,
     &:hover {
       transform: translateY(0);
-      color: $color-tertiary-dark-2;
+      color: $color-tertiary;
     }
   }
 
+  // | Tertiary button
   &.btn-tertiary {
-    color: $color-secondary-dark;
-    text-transform: none;
-    border-color: currentColor;
-    border-radius: 5px;
+    text-align: center;
+    text-align: center;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: $color-primary;
+   
+    border: 2px solid currentColor;
+    border-radius: 10px;
+    box-shadow: inset 0 -100px 0 0 rgba($color-tertiary, .7);
     
+    transition: color, box-shadow, transform, .4s ease-in;
     &:focus,
     &:hover {
-      color: $color-tertiary-dark-2;
+      color: $color-tertiary;
+      box-shadow: inset 0 0 0 0 rgba($color-tertiary, .1);
+    }
+  
+    &:active {
+      transform: translateY(1px);
     }
   }
 
-  // * BUTTON ICONS
+  // ? ===== BUTTON ICONS =====
   &__icon-arrow {
     margin-left: 0.5rem;
     display: inline-block;
     color: currentColor;
-    transition: transform 0.2s .4s ease;
+    transition: transform 0.2s 0.4s ease;
   }
 
   &:hover &__icon-arrow,
   &:focus &__icon-arrow {
     transform: translateX(5px);
   }
-}
 
+  // | Real button element changes
+  cursor: pointer;
+  background-color: transparent;
+  font-family: inherit;
+}
 

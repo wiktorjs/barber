@@ -11,14 +11,14 @@
     flex: 0 0 33%;
   }
 
-  &__box {
+  &-box {
     align-self: flex-start;
 
-    &-list {
+    &__list {
       list-style: none;
     }
 
-    &-item {
+    &__item {
       text-decoration: none;
 
       &:not(:last-child) {
@@ -26,9 +26,9 @@
       }
     }
 
-    &-link,
-    &-link:link,
-    &-link:visited {
+    &__link,
+    &__link:link,
+    &__link:visited {
       display: inline-block;
 
       font-size: 1.4rem;
@@ -44,8 +44,8 @@
       transition: transform, border-bottom, color, 0.3s ease;
     }
 
-    &-link:hover,
-    &-link:focus {
+    &__link:hover,
+    &__link:focus {
       outline: none;
       transform: translateX(2rem);
       color: $color-tertiary;
@@ -94,7 +94,7 @@
     background-color: rgba($color-primary, 0.9);
     border: none;
     border-bottom: 1px solid $color-secondary-light;
-    z-index: 200;
+    z-index: 9999;
 
     transition: transform 0.3s ease;
 
@@ -107,9 +107,9 @@
         display: none;
       }
 
-      &__box {
+      &-box {
 
-        &-list {
+        &__list {
           display: flex;
           flex-wrap: wrap;
           justify-content: flex-start;
@@ -129,18 +129,18 @@
           }
         }
 
-        &-item:not(:last-child) {
+        &__item:not(:last-child) {
           margin-bottom: 0;
         }
 
-        &-link {
+        &__link {
           color: $color-secondary-dark;
           font-weight: 400;
           text-shadow: none;
 
           &:hover,
           &:focus {
-            color: $color-tertiary-dark-2;
+            color: $color-tertiary;
             transform: translateX(5px);
           }
         }

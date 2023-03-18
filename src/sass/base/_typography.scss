@@ -6,6 +6,7 @@ h1 {
     font-weight: 700;
     font-size: 4rem;
     text-shadow: $tshadow-s;
+    width: 80%;
 
    & .highlight {
     color: currentColor;
@@ -52,11 +53,11 @@ h2 {
 h3 {
     text-transform: uppercase;
     font-size: 2.1rem;
-    color: $color-tertiary-dark-1;
+    color: $color-tertiary;
 }
 
 h4 {
     font-size: 1.5rem;
-    color: $color-tertiary-dark-2;
+    color: $color-tertiary;
     text-shadow: $tshadow-s;
 }

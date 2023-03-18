@@ -1,0 +1,62 @@
+.footer {
+    height: 30rem;
+    background-color: #171717;
+    padding: 5rem;
+
+
+    &__content-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__nav-box {
+        display: flex;
+        justify-items: center;
+        justify-content: center;
+        list-style: none;
+
+        & li {
+            padding: 1rem;
+            margin-bottom: .5rem;
+
+            & > a {
+
+                &:hover,
+                &:focus {
+                    transform: translateY(0);
+                }
+            }
+        }
+    }
+
+    // | Social media box: "find us on" text + icons
+    &__social-box {
+        display: flex;
+        justify-content: center;    
+    }
+
+    &__icon-box {
+        display: flex;
+        padding: .5rem;
+    }
+
+    &__icon {
+        height: 3rem;
+        width: 3rem;
+        fill: $color-primary;
+
+        transition: fill, .2s ease;
+        &:hover {
+            fill: $color-tertiary;
+        }
+    }
+}
+
+.copyright {
+    font-weight: 100;
+    font-size: 1rem;
+    color: #686868;
+    text-align: center;
+    padding: 2rem;
+}

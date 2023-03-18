@@ -1,0 +1,183 @@
+// | Map and book parent element
+.book-box {
+  flex: 1 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+// ? ===== MAP =====
+// | Map box
+.map {
+  flex: 1 0;
+}
+
+// | Popup styling
+.popup-box {
+  object-fit: cover;
+  background-color: rgba($color-secondary-dark, .5);
+  overflow: hidden;
+  border-radius: 5px;
+
+  &__img-box {
+    object-fit: contain;
+   
+    &--img {
+      width: 100%;
+    }
+  }
+
+  &__content-container {
+    padding: 0 1rem 1.5rem;
+
+    &--text {
+      padding: 1rem 1rem 0;
+      color: #fff;
+      font-size: 1.3rem;
+      text-align: center;
+      font-weight: 500;
+      margin: 0 0 -.2rem !important;
+    }
+  }
+
+  &__street {
+    color: $color-primary;
+    font-size: .9rem;
+    margin: 0 auto !important;
+    text-align: center;
+  }
+}
+
+.review-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 .6rem 0;
+
+  &__icon-star {
+    height: 1.6rem;
+    width: 1.6rem;
+    fill: #f7d436;
+  }
+
+  &__count {
+    text-decoration: none;
+    display: inline-block;
+    color: $color-primary;
+    font-size: .9rem;
+    text-decoration: underline;
+    cursor: pointer;
+    padding-left: 1rem;
+
+    transition: color, .2s ease;
+
+    &:hover {
+      color: $color-tertiary;
+    }
+  }
+}
+
+// | Leaflet content wrapper
+.leaflet-popup-content-wrapper {
+  background-color: rgba(256, 256, 256, 0.8);
+  box-shadow: none;
+}
+
+.leaflet-popup-tip {
+  background: rgba(256, 256, 256, 0.8) !important;
+}
+
+// ? ===== FORM =====
+// | Form parent element
+.book {
+  flex: 0 0 60%;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+
+  background-image: linear-gradient(to bottom right, rgba(0,0,0, .7) 70%, transparent ),
+  url(../img/hero.jpg);
+  background-size: cover;
+  background-position: center;
+
+  &__heading {
+    flex: 1 0 100%;
+    text-align: center;
+    color: $color-tertiary;
+    margin-bottom: 2rem;
+  }
+
+  // | Form element
+  &__form {
+    flex: 0 1 60%;
+    text-align: center;
+  }
+}
+
+// | Each input parent
+.form__group {
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+// | Input itself
+.book__form-input {
+    font-family: inherit;
+    font-size: 1.4rem;
+
+    width: 100%;  
+
+    border-radius: 5px;
+    border: none;
+    border-bottom: 4px solid transparent;
+    box-shadow: $bshadow-s;
+
+    background-color: rgba(256,256,256, .7);
+    
+    padding: 2rem 2rem 1.8rem;
+
+    transition: border-bottom .4s ease;
+
+    &:focus {
+        outline: none;
+        border-bottom: 4px solid $color-tertiary;
+
+        &:invalid {
+            border-bottom: 4px solid $color-invalid;
+        }
+
+        &:invalid + label {
+            color: $color-invalid;
+        }
+    }
+
+    &:placeholder-shown + label {
+        transform: translateY(90%);
+        left: 2rem;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &::-webkit-input-placeholder {
+        color: #4b4b4b;
+    }
+} 
+
+// | Input's labels
+.book__form-label {
+    position: absolute;
+    left: 1rem;
+
+    transform: translateY(-90%);
+    
+    color: $color-tertiary;
+    text-shadow: $tshadow-s;
+
+    font-size: 1.4rem;
+
+    transition: opacity, transform, color, .5s ease;
+}
+
+
