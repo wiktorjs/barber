@@ -1,9 +1,9 @@
-import { SLIDE_DURATION } from "./config.js";
 import carouselView from "./views/carouselView.js";
+import { mapView } from "./views/mapView.js";
 
 // ! ===== NAVIGATION =====
 const controlNavigation = function () {
-  const header = document.getElementById("header");
+  const header = document.getElementById("home");
   const stickyNav = document.querySelector(".nav--sticky");
 
   const navHeight = stickyNav.getBoundingClientRect().height;
@@ -28,15 +28,17 @@ const controlSlides = function() {
   carouselView.switchSlide();
 };
 
+const copyrightNotice = function() {
+  const parentEl = document.querySelector(".copyright");
+  const year = new Date().getFullYear();
+  parentEl.textContent = `Copyright © ${year} by Wiktor Sienkiewicz. All rights reserved.`
+}
+
+// ! ==== INITIALIZATION =====
 const init = function () {
   controlNavigation();
   controlSlides();
+  mapView();
+  copyrightNotice();
 };
 init();
-
-const map = L.map('map', {
-  center: [51.505, -0.09],
-  zoom: 13
-});
-
-console.log(map)

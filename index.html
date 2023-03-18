@@ -25,9 +25,12 @@
       integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
       crossorigin=""
     />
-    <script defer src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
-    crossorigin=""></script>
+    <script
+      defer
+      src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+      crossorigin=""
+    ></script>
 
     <!-- Own -->
     <link rel="stylesheet" href="./src/sass/main.scss" />
@@ -43,88 +46,76 @@
   <body class="container">
     <!-- ! STICKY AND MOBILE NAVIGATION -->
     <nav class="nav nav--sticky nav--hidden">
-      <div class="nav__box">
-        <ul class="nav__box-list">
-          <p>YAG</p>
-          <li class="nav__box-item">
-            <a href="#" class="nav__box-link">Główna</a>
+      <div class="nav-box">
+        <ul class="nav-box__list">
+          <p>YOB</p>
+          <li class="nav-box__item">
+            <a href="#home" class="nav-box__link">Home</a>
           </li>
-          <li class="nav__box-item">
-            <a href="#about" class="nav__box-link">O nas</a>
+          <li class="nav-box__item">
+            <a href="#about" class="nav-box__link">About</a>
           </li>
-          <li class="nav__box-item">
-            <a href="#services" class="nav__box-link">Usługi</a>
+          <li class="nav-box__item">
+            <a href="#services" class="nav-box__link">Services</a>
           </li>
-          <li class="nav__box-item">
-            <a href="#" class="nav__box-link">Promocje</a>
+          <li class="nav-box__item">
+            <a href="#" class="nav-box__link">Gallery</a>
           </li>
-          <li class="nav__box-item">
-            <a href="#" class="nav__box-link">Galeria</a>
-          </li>
-          <li class="nav__box-item">
-            <a href="#" class="nav__box-link">Program Lojalnościowy</a>
-          </li>
-          <li class="nav__box-item">
-            <a href="#" class="nav__box-link">Kontakt</a>
+          <li class="nav-box__item">
+            <a href="#" class="nav-box__link">Contact</a>
           </li>
         </ul>
       </div>
     </nav>
     <!-- ! HEADER & NAVIGATION -->
-    <header id="header" class="header">
+    <header id="home" class="header">
       <nav class="nav">
-        <div class="nav__box">
-          <ul class="nav__box-list">
-            <li class="nav__box-item">
-              <a href="#" class="nav__box-link">Główna</a>
+        <div class="nav-box">
+          <ul class="nav-box__list">
+            <li class="nav-box__item">
+              <a href="#home" class="nav-box__link">Home</a>
             </li>
-            <li class="nav__box-item">
-              <a href="#about" class="nav__box-link">O nas</a>
+            <li class="nav-box__item">
+              <a href="#about" class="nav-box__link">About</a>
             </li>
-            <li class="nav__box-item">
-              <a href="#services" class="nav__box-link">Usługi</a>
+            <li class="nav-box__item">
+              <a href="#services" class="nav-box__link">Services</a>
             </li>
-            <li class="nav__box-item">
-              <a href="#" class="nav__box-link">Promocje</a>
+            <li class="nav-box__item">
+              <a href="#" class="nav-box__link">Gallery</a>
             </li>
-            <li class="nav__box-item">
-              <a href="#" class="nav__box-link">Galeria</a>
-            </li>
-            <li class="nav__box-item">
-              <a href="#" class="nav__box-link">Program Lojalnościowy</a>
-            </li>
-            <li class="nav__box-item">
-              <a href="#" class="nav__box-link">Kontakt</a>
+            <li class="nav-box__item">
+              <a href="#" class="nav-box__link">Contact</a>
             </li>
           </ul>
         </div>
 
         <div class="nav__logo-box">
           <!-- <img src="./img/logo.png" alt="YAG Logo"> -->
-          <p>You Are Gorgeous</p>
-          <h2 class="heading-logo">YAG</h2>
+          <p>Your Own Barber</p>
+          <h2 class="heading-logo">YOB</h2>
           <p>Salon & Spa</p>
         </div>
 
         <div class="nav__contact-box">
-          <p>698 919 192</p>
-          <p>22 243 16 14</p>
-          <p>salon@salonyag.pl</p>
+          <p>123 456 789</p>
+          <p>98 765 43 21</p>
+          <p>mail@domain.com</p>
         </div>
       </nav>
 
       <div class="header__text-box">
         <div class="header__text-box--main">
           <h1>
-            Odkryjemy twoje piękno w sposób
-            <span class="highlight">wyjątkowy.</span>
+            Discovering your beauty
+            <span class="highlight">extraordinarily.</span>
           </h1>
           <div class="header__btn-box u-mt-sm">
             <a class="btn btn--white u-mr-s" href="#"
-              >Rezerwuj<span class="btn__icon-arrow">&rarr;</span></a
+              >Book now<span class="btn__icon-arrow">&rarr;</span></a
             >
             <a class="btn btn--white-outline" href="#services"
-              >Usługi<span class="btn__icon-arrow">&rarr;</span></a
+              >Services<span class="btn__icon-arrow">&rarr;</span></a
             >
           </div>
         </div>
@@ -135,9 +126,9 @@
     <main>
       <!-- * ABOUT -->
       <section id="about" class="section__about">
-        <h2 class="about__heading u-mb-s">O nas</h2>
+        <h2 class="about__heading u-mb-s">About us</h2>
         <div class="about__text-box about__text-box--1 u-mb-m">
-          <h3 class="u-mb-xs">Nasz salon</h3>
+          <h3 class="u-mb-xs">Our salon</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit cumque
             veniam, consequatur iste animi quis in expedita fugiat sed. Cumque
@@ -146,61 +137,36 @@
             deserunt qui ea illo iste temporibus a quas odit, unde eos velit,
             perferendis fugit neque facilis corporis aliquam.
           </p>
-
-          <!-- <br />
-          <p>
-            Zapraszamy Państwa na bogaty pakiet zabiegów upiększających i
-            pielęgnujących dla całego ciała – usługi fryzjerskie, depilacje
-            laserową, przedłużanie rzęs, makijaż permanentny, manicure i
-            pedicure, zabiegi na dłonie i stopy, masaże i wiele innych.
-          </p> -->
         </div>
 
         <div class="about__text-box about__text-box--2">
-          <h3 class="u-mb-xs">Usługi</h3>
+          <h3 class="u-mb-xs">Services</h3>
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae harum
             at temporibus maiores consequuntur tempore pariatur ratione minima
             ab aut sit iure enim, eum quas distinctio voluptate accusamus earum
             eius. Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Consectetur, animi?
-
-            <!-- Nie ograniczamy się tylko do dbania o Państwa ciało, twarz, czy
-            włosy. Zależy nam także na Państwa zdrowiu, dlatego dysponujemy
-            nowoczesnym sprzętem, używamy produktów najwyższej jakości,
-            wszystkie narzędzia są sterylizowane po każdym zabiegu, a nasz
-            personel to doświadczeni i wykwalifikowani specjaliści. -->
           </p>
 
-          <!-- <br />
-          <p>W naszym salonie znajdują się:</p>
-          <ul>
-            <li>
-              &rarr; gabinet przeznaczony do kosmetyki twarzy/gabinet masażu
-            </li>
-            <li>&rarr; gabinet manicure i pedicure</li>
-            <li>&rarr; gabinet specjalistycznych zabiegów na ciało</li>
-            <li>&rarr; salon fryzjerski, fryzjer Białołęka</li>
-          </ul> -->
-
           <a href="#" class="btn btn--square u-mt-sm"
-            >Dowiedz się więcej<span class="btn__icon-arrow">&rarr;</span></a
+            >Learn more<span class="btn__icon-arrow">&rarr;</span></a
           >
         </div>
 
         <div class="about__img-box">
           <img
-            src="./src/img/about-1.jpeg"
+            src="./src/img/about1.jpg"
             alt="about image 1"
             class="about__img about__img--1"
           />
           <img
-            src="./src/img/about-2.jpeg"
+            src="./src/img/about2.jpg"
             alt="about image 2"
             class="about__img about__img--2"
           />
           <img
-            src="./src/img/about-3.jpeg"
+            src="./src/img/about3.jpg"
             alt="about image 3"
             class="about__img about__img--3"
           />
@@ -208,7 +174,7 @@
       </section>
 
       <section id="services" class="section__service">
-        <h2 class="u-mb-m">Nasze najpopularniejsze usługi</h2>
+        <h2 class="u-mb-m">Our most popular services</h2>
 
         <div class="carousel">
           <div class="slide-box">
@@ -218,7 +184,7 @@
               alt="service photo"
             />
             <div class="slide-box__content">
-              <h4 class="slide-box__content-heading">Strzyżenie</h4>
+              <h4 class="slide-box__content-heading">Hairdressing</h4>
               <p class="slide-box__content-text">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est
                 esse iure optio eveniet eius ut laboriosam vero, molestias
@@ -251,7 +217,7 @@
               alt="service photo"
             />
             <div class="slide-box__content">
-              <h4 class="slide-box__content-heading">Paznokcie</h4>
+              <h4 class="slide-box__content-heading">Nails</h4>
               <p class="slide-box__content-text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Molestiae molestias consequatur sint atque fugiat, quisquam
@@ -262,28 +228,107 @@
           </div>
           <div class="slide-status-bar"></div>
 
-          <svg class="slide__arrow-icon slide__arrow-icon--left">
-            <use href="./src/img/icons.svg#icon-arrow-left"></use>
-          </svg>
+          <div class="carousel__icon-box carousel__icon-box--left">
+            <svg class="slide__arrow-icon slide__arrow-icon--left">
+              <use href="./src/img/icons.svg#icon-arrow-left"></use>
+            </svg>
+          </div>
 
-          <svg class="slide__arrow-icon slide__arrow-icon--right">
-            <use href="./src/img/icons.svg#icon-arrow-right"></use>
-          </svg>
+          <div class="carousel__icon-box carousel__icon-box--right">
+            <svg class="slide__arrow-icon slide__arrow-icon--right">
+              <use href="./src/img/icons.svg#icon-arrow-right"></use>
+            </svg>
+          </div>
         </div>
 
-        <a class="btn btn--white-outline btn-tertiary u-mt-m" href="#"
-          >Zobacz wszystkie usługi<span class="btn__icon-arrow">&rarr;</span></a
+        <a class="btn btn-tertiary u-mt-m" href="#"
+          >See all services<span class="btn__icon-arrow">&rarr;</span></a
         >
       </section>
 
       <section class="section__location">
-        <div class="map" id="map"></div>
-        <div class="info">
-          <p>abc</p>
+        <h2 class="u-mb-m d">Where to find us</h2>
+
+        <div class="book-box">
+          <div class="map" id="map"></div>
+
+          <div class="book">
+            <h3 class="book__heading">Interested? Book your visit now!</h3>
+
+            <form class="book__form" action="submit">
+              <div class="form__group">
+                <input
+                  id="name"
+                  class="book__form-input"
+                  type="text"
+                  placeholder="First name"
+                  pattern="[A-Za-z]{3,}"
+                />
+                <label for="name" class="book__form-label">First name</label>
+              </div>
+
+              <div class="form__group">
+                <input
+                  id="email"
+                  class="book__form-input"
+                  type="email"
+                  placeholder="Email"
+                  pattern="[a-z0-8._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                />
+                <label for="email" class="book__form-label">Email</label>
+              </div>
+              <button class="btn btn-tertiary book__form-btn">Book now</button>
+            </form>
+          </div>
         </div>
       </section>
     </main>
 
-    <footer></footer>
+    <footer id="footer" class="footer">
+      <h2 class="heading-logo">YOB</h2>
+
+      <div class="footer__content-box">
+        <ul class="footer__nav-box">
+          <li class="nav-box__item">
+            <a href="#home" class="nav-box__link">Home</a>
+          </li>
+          <li class="nav-box__item">
+            <a href="#about" class="nav-box__link">About</a>
+          </li>
+          <li class="nav-box__item">
+            <a href="#services" class="nav-box__link">Services</a>
+          </li>
+          <li class="nav-box__item">
+            <a href="#" class="nav-box__link">Gallery</a>
+          </li>
+          <li class="nav-box__item">
+            <a href="#" class="nav-box__link">Contact</a>
+          </li>
+        </ul>
+        <div class="footer__social-box">
+
+          <a class="footer__icon-box" href="#">
+            <svg class="footer__icon">
+              <use href="./src/img/icons.svg#icon-facebook"></use>
+            </svg>
+          </a>
+
+          <a class="footer__icon-box" href="#">
+            <svg class="footer__icon">
+              <use href="./src/img/icons.svg#icon-instagram"></use>
+            </svg>
+          </a>
+
+          <a class="footer__icon-box" href="#">
+            <svg class="footer__icon">
+              <use href="./src/img/icons.svg#icon-tiktok"></use>
+            </svg>
+          </a>
+        </div>
+
+        <p class="copyright"></p>
+
+      </div>
+    </footer>
   </body>
 </html>

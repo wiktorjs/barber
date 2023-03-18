@@ -69,10 +69,10 @@ class CarouselView {
    */
   switchSlide() {
     this._parentEl.addEventListener("click", (e) => {
-      const arrow = e.target.closest(".slide__arrow-icon");
+      const arrow = e.target.closest(".carousel__icon-box");
       if (!arrow) return;
 
-      arrow.classList.contains("slide__arrow-icon--left")
+      arrow.classList.contains("carousel__icon-box--left")
         ? this._prevSlide()
         : this._nextSlide();
       //

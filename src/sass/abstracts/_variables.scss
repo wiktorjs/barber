@@ -5,13 +5,14 @@ $color-secondary: #7a7a7a;
 $color-secondary-light: #929292;
 $color-secondary-dark: #0f0c0c;
 
-$color-tertiary: #5fdec4;
+$color-tertiary: #08b998;
 $color-tertiary-dark-1: #739f97;
-$color-tertiary-dark-2: #08b998;
+
+$color-invalid: #f15037;
 
 // * Shadows
 $tshadow-s: 0 .1rem .1rem rgba(0,0,0);
 
 // Img
-$bshadow-s: 0 .2rem 1rem rgba(0,0,0, .5);
-$bshadow-s--hover: 0 .2rem 1.5rem rgba(0,0,0, .6);
+$bshadow-s: 0 .2rem 1rem rgba(0,0,0, .4);
+$bshadow-s--hover: 0 .2rem 1.5rem rgba(0,0,0, .5);
