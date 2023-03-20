@@ -10,7 +10,42 @@
 // | Map box
 .map {
   flex: 1 0;
+  border-radius: 5px;
 }
+
+.contact-info {
+
+  flex: 0 0 45%;
+  align-self: center;
+
+  &__heading {
+    color: $color-primary;
+    text-shadow: $tshadow-s;
+  }
+
+  &__text-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: .5rem;
+  }
+
+  &__text {
+    color: $color-primary;
+    text-shadow: $tshadow-s;
+    font-size: 2rem;
+    font-weight: 100;
+    line-height: 1.2;
+    padding: 1rem;
+  }
+
+  &__icon {
+    height: 4rem;
+    width: 4rem;
+    fill: #56e7cc;
+  }
+}
+
+
 
 // | Popup styling
 .popup-box {
@@ -90,8 +125,13 @@
 // ? ===== FORM =====
 // | Form parent element
 .book {
-  flex: 0 0 60%;
+  flex: 0 0 50%;
+  padding: 5rem;
 
+  border-bottom: 3px solid $color-tertiary;
+  border-radius: 5px;
+
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -106,7 +146,9 @@
     flex: 1 0 100%;
     text-align: center;
     color: $color-tertiary;
-    margin-bottom: 2rem;
+
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
   }
 
   // | Form element
@@ -115,6 +157,7 @@
     text-align: center;
   }
 }
+
 
 // | Each input parent
 .form__group {

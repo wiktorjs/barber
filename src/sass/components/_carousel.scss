@@ -63,7 +63,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-
+  cursor: pointer;
   display: flex;
   align-items: center;
 
@@ -107,11 +107,5 @@
   height: 6rem; width: 6rem;
   color: $color-tertiary;
   fill: $color-tertiary;
-
-  line-height: 0.5;
-  cursor: pointer;
-
-  transition: opacity, transform, 0.2s ease;
-
 }
 

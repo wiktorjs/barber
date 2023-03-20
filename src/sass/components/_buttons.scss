@@ -85,7 +85,17 @@
     &:active {
       transform: translateY(1px);
     }
+
+    &--form {
+      width: 30%;
+      margin-top: 3rem;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
   }
+
 
   // ? ===== BUTTON ICONS =====
   &__icon-arrow {
