@@ -80,6 +80,10 @@
     font-size: 1rem;
     line-height: 1.3rem;
     text-shadow: $tshadow-s;
+
+    @include respond(tab-port) {
+      visibility: hidden;
+    }
   }
 
   // ! STICKY & MOBILE NAV
@@ -108,25 +112,36 @@
       }
 
       &-box {
-
         &__list {
           display: flex;
           flex-wrap: wrap;
           justify-content: flex-start;
           align-items: center;
+
           gap: 3rem;
 
           & p { // ? "logo"
+            
             margin-right: 2rem;
 
             font-size: 3rem;
             font-weight: 700;
             letter-spacing: 0.6rem;
+
+            @include respond(phone) {
+              margin-top: 2rem;
+              margin-right: 0;
+            }
           }
 
           &:last-child {
             margin-right: 3rem;
+
+            @include respond(phone) {
+              margin-right: 0;
+            }
           }
+          
         }
 
         &__item:not(:last-child) {
@@ -146,9 +161,20 @@
         }
       }
     }
+
+    @include respond(phone) {
+      width: 25%;
+      height: 100%;
+      left: 0;
+    }
   }
+
 }
 
 .nav--hidden {
   transform: translateY(-100%);
+
+  @include respond(phone) {
+   transform: translateX(-100%);
+  }
 }

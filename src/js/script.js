@@ -2,7 +2,8 @@ import "core-js/actual";
 import "regenerator-runtime/runtime";
 import carouselView from "./views/carouselView.js";
 import { mapView } from "./views/mapView.js";
-import { showModal } from "./views/modalView.js";
+// import { showModal } from "./views/modalView.js";
+import ModalView from "./views/modalView.js";
 
 // ! ===== NAVIGATION =====
 const controlNavigation = function () {
@@ -41,7 +42,7 @@ const copyrightNotice = function () {
 const init = function () {
   controlNavigation();
   controlSlides();
-  showModal();
+  // showModal();
   mapView();
   copyrightNotice();
 };

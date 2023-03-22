@@ -1,9 +1,10 @@
 .services {
-    height: 90%;
-    width: 75%;
-    background-image:  linear-gradient(rgba(0,0,0, .7) 100%, transparent),url(../img/servicesBg.jpg);
+    position: absolute;
+    height: 100%;
+
+    background-image:  linear-gradient(rgba(0,0,0, .25) 100%, transparent),url(../img/servicesBg.jpg);
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
     padding: 4rem 7rem 7rem;
     text-align: center;
 
@@ -12,6 +13,8 @@
     flex-wrap: wrap;
     justify-content: center;
     // overflow-y: scroll;
+    border-bottom: 3px solid $color-tertiary;
+    border-radius: 5px;
 
     &__heading {
         font-size: 3.5rem;
@@ -19,7 +22,13 @@
         color: $color-primary;
         font-weight: 100;
         letter-spacing: 3;
+        text-shadow: $tshadow-s;
     }
+
+    @media only screen and (max-width: 78.75em), only screen and (max-height: 62.5em){
+        overflow: scroll;
+    }
+
 }
 
 .service-box {
@@ -48,10 +57,12 @@
         padding: 2rem;
         opacity: 0.5;
         transition: opacity .5s ease;
+        cursor: default;
     }
 
     & h4 {
         font-size: 1.5rem;
+        text-shadow: none;
     }
 
     & p {
@@ -60,6 +71,7 @@
         color: $color-primary;
         max-height: 6.5rem;
         overflow: scroll;
+        
     }
 
     &:hover &__img {
@@ -69,5 +81,9 @@
 
     &:hover &__text-box {
         opacity: 1;
+    }
+
+    @include respond(phone) {
+        flex: 0 0 50%;
     }
 }

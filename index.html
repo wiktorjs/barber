@@ -251,7 +251,7 @@
       <section id="book" class="section__booking">
         <h2 class="contact-info__heading u-mb-m">Contact us</h2>
 
-        <div class="book-box">
+        <div class="contact-box">
           <div class="contact-info">
             <div class="contact-info__text-box">
               <svg class="contact-info__icon">
@@ -296,7 +296,7 @@
               class="btn btn-tertiary btn-tertiary--form btn-open-modal"
               data-type="book"
             >
-              Book now
+              Book now<span class="btn__icon-arrow">&rarr;</span>
             </button>
           </div>
           <div class="map" id="map"></div>
@@ -352,8 +352,17 @@
     </footer>
 
     <div class="overlay hidden">
-      
-    </div>
 
+      <div class="modal-parent">
+
+        <div id="btn-close-modal" class="close-modal__icon-box">
+          <svg class="close-modal__icon">
+            <use href="./src/img/icons.svg#icon-close"></use>
+          </svg>
+        </div>
+
+      </div>
+
+    </div>
   </body>
 </html>

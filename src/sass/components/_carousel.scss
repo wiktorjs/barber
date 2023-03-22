@@ -42,6 +42,10 @@
       bottom: 0;
 
       text-shadow: $tshadow-s;
+
+      @media only screen and (max-width: 65.625em) {
+        width: 100%;
+      }
     }
   }
 }
