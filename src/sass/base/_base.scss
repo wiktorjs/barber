@@ -10,6 +10,18 @@
 html {
     scroll-behavior: smooth;
     font-size: 62.5%;
+
+    @include respond(tab-land) {
+      font-size: 56.25%;
+    }
+    
+    @include respond(tab-port) {
+      font-size: 50%;
+    }
+
+    @include respond(phone) {
+      font-size: 37.5%;
+    }
 }
 
 body {
@@ -18,9 +30,8 @@ body {
     font-family: "Roboto", sans-serif;
     line-height: 1.6;
     font-size: 1.6rem;
-}
 
-// .container {
-//     display: grid;
-//     grid-template-rows: 90vh repeat(4, min-content);
-// }
+    @include respond(phone) {
+      padding: 0;
+    }
+}

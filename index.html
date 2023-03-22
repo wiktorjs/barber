@@ -59,10 +59,10 @@
             <a href="#services" class="nav-box__link">Services</a>
           </li>
           <li class="nav-box__item">
-            <a href="#" class="nav-box__link">Gallery</a>
+            <a href="#book" class="nav-box__link">Contact</a>
           </li>
           <li class="nav-box__item">
-            <a href="#" class="nav-box__link">Contact</a>
+            <a href="#" class="nav-box__link">Gallery</a>
           </li>
         </ul>
       </div>
@@ -82,16 +82,15 @@
               <a href="#services" class="nav-box__link">Services</a>
             </li>
             <li class="nav-box__item">
-              <a href="#" class="nav-box__link">Gallery</a>
+              <a href="#book" class="nav-box__link">Contact</a>
             </li>
             <li class="nav-box__item">
-              <a href="#" class="nav-box__link">Contact</a>
+              <a href="#" class="nav-box__link">Gallery</a>
             </li>
           </ul>
         </div>
 
         <div class="nav__logo-box">
-          <!-- <img src="./img/logo.png" alt="YAG Logo"> -->
           <p>Your Own Barber</p>
           <h2 class="heading-logo">YOB</h2>
           <p>Salon & Spa</p>
@@ -184,7 +183,7 @@
               alt="service photo"
             />
             <div class="slide-box__content">
-              <h4 class="slide-box__content-heading">Hairdressing</h4>
+              <h4 class="slide-box__content-heading">Beard grooming</h4>
               <p class="slide-box__content-text">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est
                 esse iure optio eveniet eius ut laboriosam vero, molestias
@@ -201,7 +200,7 @@
               alt="service photo"
             />
             <div class="slide-box__content">
-              <h4 class="slide-box__content-heading">SPA</h4>
+              <h4 class="slide-box__content-heading">Hairdressing</h4>
               <p class="slide-box__content-text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
                 esse magnam, vel repudiandae ducimus amet non cum at mollitia
@@ -241,45 +240,66 @@
           </div>
         </div>
 
-        <a class="btn btn-tertiary u-mt-m" href="#"
-          >See all services<span class="btn__icon-arrow">&rarr;</span></a
+        <btn
+          class="btn btn-tertiary u-mt-m btn-open-modal"
+          href="#"
+          data-type="services"
+          >See all services<span class="btn__icon-arrow">&rarr;</span></btn
         >
       </section>
 
-      <section class="section__booking">
-        <h2 class="u-mb-m d">Where to find us</h2>
+      <section id="book" class="section__booking">
+        <h2 class="contact-info__heading u-mb-m">Contact us</h2>
 
-        <div class="book-box">
-          <div class="map" id="map"></div>
+        <div class="contact-box">
+          <div class="contact-info">
+            <div class="contact-info__text-box">
+              <svg class="contact-info__icon">
+                <use href="./src/img/icons.svg#icon-location"></use>
+              </svg>
+              <p class="contact-info__text">
+                YOB Salon, Agrykola st., 00-460, Warsaw
+              </p>
+            </div>
 
-          <div class="book">
-            <h3 class="book__heading">Interested? Book your visit now!</h3>
+            <div class="contact-info__text-box">
+              <svg class="contact-info__icon">
+                <use href="./src/img/icons.svg#icon-clock"></use>
+              </svg>
+              <p class="contact-info__text">
+                Monday - Friday: 8am - 6pm <br />
+                Saturday: 10am - 4pm
+              </p>
+            </div>
 
-            <form class="book__form" action="submit">
-              <div class="form__group">
-                <input
-                  id="name"
-                  class="book__form-input"
-                  type="text"
-                  placeholder="First name"
-                  pattern="[A-Za-z]{3,}"
-                />
-                <label for="name" class="book__form-label">First name</label>
-              </div>
+            <div class="contact-info__text-box">
+              <svg class="contact-info__icon">
+                <use href="./src/img/icons.svg#icon-phone"></use>
+              </svg>
+              <p class="contact-info__text">123 456 789</p>
+            </div>
 
-              <div class="form__group">
-                <input
-                  id="email"
-                  class="book__form-input"
-                  type="email"
-                  placeholder="Email"
-                  pattern="[a-z0-8._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-                />
-                <label for="email" class="book__form-label">Email</label>
-              </div>
-              <button class="btn btn-tertiary book__form-btn">Book now</button>
-            </form>
+            <div class="contact-info__text-box">
+              <svg class="contact-info__icon">
+                <use href="./src/img/icons.svg#icon-phone"></use>
+              </svg>
+              <p class="contact-info__text">98 765 43 21</p>
+            </div>
+
+            <div class="contact-info__text-box">
+              <svg class="contact-info__icon">
+                <use href="./src/img/icons.svg#icon-envelope"></use>
+              </svg>
+              <p class="contact-info__text">mail@domain.com</p>
+            </div>
+            <button
+              class="btn btn-tertiary btn-tertiary--form btn-open-modal"
+              data-type="book"
+            >
+              Book now<span class="btn__icon-arrow">&rarr;</span>
+            </button>
           </div>
+          <div class="map" id="map"></div>
         </div>
       </section>
     </main>
@@ -306,7 +326,6 @@
           </li>
         </ul>
         <div class="footer__social-box">
-
           <a class="footer__icon-box" href="#">
             <svg class="footer__icon">
               <use href="./src/img/icons.svg#icon-facebook"></use>
@@ -326,9 +345,24 @@
           </a>
         </div>
 
-        <p class="copyright"></p>
-
+        <p class="copyright">
+          Copyright © by Wiktor Sienkiewicz. All rights reserved.
+        </p>
       </div>
     </footer>
+
+    <div class="overlay hidden">
+
+      <div class="modal-parent">
+
+        <div id="btn-close-modal" class="close-modal__icon-box">
+          <svg class="close-modal__icon">
+            <use href="./src/img/icons.svg#icon-close"></use>
+          </svg>
+        </div>
+
+      </div>
+
+    </div>
   </body>
 </html>

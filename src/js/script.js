@@ -1,5 +1,9 @@
+import "core-js/actual";
+import "regenerator-runtime/runtime";
 import carouselView from "./views/carouselView.js";
 import { mapView } from "./views/mapView.js";
+// import { showModal } from "./views/modalView.js";
+import ModalView from "./views/modalView.js";
 
 // ! ===== NAVIGATION =====
 const controlNavigation = function () {
@@ -7,7 +11,7 @@ const controlNavigation = function () {
   const stickyNav = document.querySelector(".nav--sticky");
 
   const navHeight = stickyNav.getBoundingClientRect().height;
-  // console.log(navHeight);
+
   const showNav = function (entries, observer) {
     const [entry] = entries;
     entry.isIntersecting
@@ -24,21 +28,23 @@ const controlNavigation = function () {
 };
 
 // ! ===== SLIDES =====
-const controlSlides = function() {
+const controlSlides = function () {
   carouselView.switchSlide();
 };
 
-const copyrightNotice = function() {
+const copyrightNotice = function () {
   const parentEl = document.querySelector(".copyright");
   const year = new Date().getFullYear();
-  parentEl.textContent = `Copyright © ${year} by Wiktor Sienkiewicz. All rights reserved.`
-}
+  parentEl.textContent = `Copyright © ${year} by Wiktor Sienkiewicz. All rights reserved.`;
+};
 
 // ! ==== INITIALIZATION =====
 const init = function () {
   controlNavigation();
   controlSlides();
+  // showModal();
   mapView();
   copyrightNotice();
 };
 init();
+

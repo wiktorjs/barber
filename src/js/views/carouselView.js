@@ -8,6 +8,8 @@ class CarouselView {
   _statusBar = document.querySelector(".slide-status-bar");
   _curSlide = 0;
   _interval = setInterval(() => this._nextSlide(), SLIDE_DURATION * 1000);
+  _touchstart;
+  _touchend;
 
   /**
    * Upon class instance creation, automatically begins slideshow from the first slide
@@ -15,6 +17,7 @@ class CarouselView {
   constructor() {
     this._goToSlide(0);
     this._statusBar.style.animation = `move-status-bar ${SLIDE_DURATION}s infinite linear`;
+    this._touchSwipe();
   }
 
   /**
@@ -90,6 +93,36 @@ class CarouselView {
       }
     });
   }
+
+  _touchSwipe() {
+
+    this._parentEl.addEventListener(
+      "touchstart",
+      (e) => (this._touchstart = e.changedTouches[0].screenX)
+    );
+
+    this._parentEl.addEventListener("touchend", (e) => {
+      this._touchend = e.changedTouches[0].screenX;
+      this._swipeSlides();
+    });
+
+  }
+
+  _swipeSlides() {
+
+    // | when swiped left for at least 20px, go to the next slide
+    if (
+      this._touchstart > this._touchend &&
+      this._touchstart - this._touchend > 20
+    ) this._nextSlide();
+
+    // | when swiped right for at least 20px, go to the previous slide
+    if (
+      this._touchstart < this._touchend &&
+      this._touchstart - this._touchend < -20
+    ) this._prevSlide();
+  }
+
 }
 
 export default new CarouselView();

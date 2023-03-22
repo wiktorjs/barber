@@ -1,183 +1,155 @@
-// | Map and book parent element
-.book-box {
-  flex: 1 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-// ? ===== MAP =====
-// | Map box
-.map {
-  flex: 1 0;
-}
-
-// | Popup styling
-.popup-box {
-  object-fit: cover;
-  background-color: rgba($color-secondary-dark, .5);
-  overflow: hidden;
-  border-radius: 5px;
-
-  &__img-box {
-    object-fit: contain;
-   
-    &--img {
-      width: 100%;
-    }
-  }
-
-  &__content-container {
-    padding: 0 1rem 1.5rem;
-
-    &--text {
-      padding: 1rem 1rem 0;
-      color: #fff;
-      font-size: 1.3rem;
-      text-align: center;
-      font-weight: 500;
-      margin: 0 0 -.2rem !important;
-    }
-  }
-
-  &__street {
-    color: $color-primary;
-    font-size: .9rem;
-    margin: 0 auto !important;
-    text-align: center;
-  }
-}
-
-.review-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 .6rem 0;
-
-  &__icon-star {
-    height: 1.6rem;
-    width: 1.6rem;
-    fill: #f7d436;
-  }
-
-  &__count {
-    text-decoration: none;
-    display: inline-block;
-    color: $color-primary;
-    font-size: .9rem;
-    text-decoration: underline;
-    cursor: pointer;
-    padding-left: 1rem;
-
-    transition: color, .2s ease;
-
-    &:hover {
-      color: $color-tertiary;
-    }
-  }
-}
-
-// | Leaflet content wrapper
-.leaflet-popup-content-wrapper {
-  background-color: rgba(256, 256, 256, 0.8);
-  box-shadow: none;
-}
-
-.leaflet-popup-tip {
-  background: rgba(256, 256, 256, 0.8) !important;
-}
-
-// ? ===== FORM =====
 // | Form parent element
 .book {
-  flex: 0 0 60%;
+  position: absolute;
+  height: 100%;
+  width: 100%;
 
+  border-bottom: 3px solid $color-tertiary;
+  border-radius: 5px;
+
+  position: relative;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
 
-  background-image: linear-gradient(to bottom right, rgba(0,0,0, .7) 70%, transparent ),
-  url(../img/hero.jpg);
+  background-color: $color-primary;
   background-size: cover;
   background-position: center;
 
   &__heading {
-    flex: 1 0 100%;
     text-align: center;
-    color: $color-tertiary;
-    margin-bottom: 2rem;
+
+    color: $color-secondary-dark;
+    font-weight: 300;
+    letter-spacing: 2px;
+
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+
   }
 
   // | Form element
   &__form {
-    flex: 0 1 60%;
+    flex: 0 1 40%;
+    align-self: center;
+
     text-align: center;
+    padding: 5rem;
+
+    @media only screen and (max-width: 35em) { // 560px
+      flex: 0 1 60%;
+    }
+    
+    @media only screen and (max-width: 31.25em) { // 500px
+      width: 90%;
+      padding: 0;
+    }
+  }
+
+
+  // | Form image
+  &__img {
+    flex-grow: 1;
+    height: 100%;
+
+    background-image: url(../img/servicesBg.jpg);
+    background-size: cover;
+    background-position-x: 50%;
+    filter: brightness(0.8);
+
+    @media only screen and (max-width: 31.25em) { // 500px
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: 31.25em) { // 500px
+    justify-content: center;
   }
 }
 
 // | Each input parent
 .form__group {
-    position: relative;
-    margin-bottom: 3rem;
+  position: relative;
+  margin-bottom: 3rem;
+ 
 }
 
 // | Input itself
 .book__form-input {
-    font-family: inherit;
-    font-size: 1.4rem;
+  font-family: inherit;
+  font-size: 1.4rem;
 
-    width: 100%;  
+  width: 100%;
 
-    border-radius: 5px;
-    border: none;
-    border-bottom: 4px solid transparent;
-    box-shadow: $bshadow-s;
+  border-radius: 5px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  box-shadow: 0 0.2rem 1rem #00000021;
 
-    background-color: rgba(256,256,256, .7);
-    
-    padding: 2rem 2rem 1.8rem;
+  background-color: rgba(256, 256, 256, 0.7);
 
-    transition: border-bottom .4s ease;
+  padding: 2rem 2rem 1.8rem;
 
-    &:focus {
-        outline: none;
-        border-bottom: 4px solid $color-tertiary;
+  transition: border-bottom 0.4s ease;
 
-        &:invalid {
-            border-bottom: 4px solid $color-invalid;
-        }
+  &:focus {
+    outline: none;
+    border-bottom: 2px solid $color-tertiary;
 
-        &:invalid + label {
-            color: $color-invalid;
-        }
+    &:invalid {
+      border-bottom: 2px solid $color-invalid;
     }
 
-    &:placeholder-shown + label {
-        transform: translateY(90%);
-        left: 2rem;
-        opacity: 0;
-        visibility: hidden;
+    &:invalid + label {
+      color: $color-invalid;
     }
+  }
 
-    &::-webkit-input-placeholder {
-        color: #4b4b4b;
-    }
-} 
+  &:placeholder-shown + label {
+    transform: translateY(90%);
+    left: 2rem;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &::-webkit-input-placeholder {
+    color: #4b4b4b;
+  }
+}
 
 // | Input's labels
 .book__form-label {
-    position: absolute;
-    left: 1rem;
+  position: absolute;
+  left: 1rem;
 
-    transform: translateY(-90%);
-    
-    color: $color-tertiary;
-    text-shadow: $tshadow-s;
+  transform: translateY(-100%);
 
-    font-size: 1.4rem;
+  color: $color-tertiary;
 
-    transition: opacity, transform, color, .5s ease;
+  font-size: 1.4rem;
+
+  transition: opacity, transform, color, 0.5s ease;
 }
 
+// | Id to increase selector specificity and avoid messing with other btn classes
+#book__btn {
+  box-shadow: none;
+  color: $color-secondary-dark;
+  margin-top: 1rem;
+  font-size: inherit;
 
+  transition: transform, color, 0.4s ease;
+
+  &:hover,
+  &:active,
+  &:focus {
+    transform: translateY(-2px);
+    color: $color-tertiary;
+  }
+
+
+  @media only screen and (max-width: 35em) { // 560px
+    // width: 100%;
+    // text-transform: none;
+    // padding: 1.2rem;
+  }
+}

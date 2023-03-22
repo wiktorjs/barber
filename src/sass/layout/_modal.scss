@@ -1,0 +1,73 @@
+// | ===== OVERLAY =====
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 9999999;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+
+
+// | ===== PARENT FOR MODAL CONTENT AND ICON =====
+.modal-parent {
+  height: 90vh;
+  width: 75vw;
+  position: relative;
+
+  &__book {
+    height: 75vh;
+
+    @include respond(phone) {
+      height: 50vh !important;
+    }
+  }
+  
+  @include respond(tab-port) {
+    width: 90vw;
+  } 
+}
+
+
+// | ===== MODAL ICON =====
+.close-modal__icon-box {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  cursor: pointer;
+  z-index: 1;
+
+  display: flex;
+}
+
+.close-modal__icon {
+  height: 3rem;
+  width: 3rem;
+  fill: $color-primary;
+  opacity: .5;
+  transition: opacity 0.3s ease;
+
+  @include respond(phone) {
+    height: 4rem; width: 4rem;
+  }
+
+  @media only screen and (max-width: 31.25em) { // 500px
+    fill: $color-secondary-dark;
+  }
+}
+
+.close-modal__icon-box:hover .close-modal__icon {
+  opacity: 1;
+}
