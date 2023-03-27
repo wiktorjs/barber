@@ -2,10 +2,11 @@
   "name": "barber",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "source": "src/index.html",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "start": "parcel",
+    "build": "parcel build --public-url ./ --dist-dir public"
   },
   "author": "Wiktor Sienkiewicz",
   "license": "ISC",
