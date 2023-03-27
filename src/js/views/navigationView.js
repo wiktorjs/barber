@@ -32,17 +32,19 @@ class NavigationView {
       this.#headerObserver.unobserve(this.#header);
       this.#isObserving = false;
     }
+    if(this.#hamburgerBtn.classList.contains('box--active')) {
+      this.#hamburgerBtn.classList.remove('box--active');
+      [...this.#hamburgerBtn.children].forEach(span => span.classList.remove('active'));
+    }
   }
 
   #mobileNavigationVisibilityCheck(e) {
-    
-    const parentEl = e.target.closest('.nav-menu__button');
-    const spans = [...parentEl.children];
-    spans.forEach((span) => span.classList.toggle('active'));
+
+    [...this.#hamburgerBtn.children].forEach((span) => span.classList.toggle('active'));
 
     this.#stickyNav.classList.toggle('nav--hidden');
 
-    parentEl.classList.toggle('box--active');
+    this.#hamburgerBtn.classList.toggle('box--active');
   }
 
   init() {
