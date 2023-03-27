@@ -29,15 +29,16 @@
 
   &__book {
     height: 75vh;
+  }
 
-    @include respond(phone) {
-      height: 50vh !important;
-    }
+  // 600px, 1650px, 800px
+  @media only screen and (min-width: 37.5em) and (max-width: 103.125em) and (min-height: 60em) { 
+    height: 50vh;
+  }
+  @include respond(phone) {
+    height: 50vh;
   }
   
-  @include respond(tab-port) {
-    width: 90vw;
-  } 
 }
 
 
