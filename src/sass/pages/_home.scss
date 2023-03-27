@@ -33,6 +33,10 @@
   flex-direction: column;
 
   border-bottom: 1px solid rgba(0,0,0,.1);
+
+  @include respond(tab-port) {
+    height: 100rem;
+  }
 }
 
 

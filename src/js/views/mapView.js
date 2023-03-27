@@ -1,27 +1,27 @@
-import popupImg from "../../img/hero-s.jpg"
-import icons from "../../img/icons.svg"
+import popupImg from '../../img/hero-s.jpg';
+import icons from '../../img/icons.svg';
 
 // todo CONFIGURE LEAFLET, regenerator-runtime
 
-const generateFullStar = function(starsNum) {
+const generateFullStar = function (starsNum) {
   const starMarkup = `
   <svg class="review-box__icon-star"> 
     <use href="${icons}#icon-star-full"></use>
   </svg>
-  `
+  `;
   const arr = new Array(starsNum).fill(starMarkup);
 
-  const markup = [...arr].join("")
+  const markup = [...arr].join('');
 
-  return markup
-}
+  return markup;
+};
 
 export const mapView = function () {
   const coords = [52.217691, 21.033053];
-  const map = L.map("map").setView([52.219449, 21.033197], 16);
-  
+  const map = L.map('map').setView([52.219449, 21.033197], 16);
+
   L.tileLayer(
-    "https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png",
+    'https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png',
     {
       maxZoom: 20,
       attribution:
@@ -63,6 +63,3 @@ export const mapView = function () {
     )
     .openPopup();
 };
-
-
-

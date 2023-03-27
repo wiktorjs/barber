@@ -12,7 +12,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    // overflow-y: scroll;
+
     border-bottom: 3px solid $color-tertiary;
     border-radius: 5px;
 
@@ -24,11 +24,11 @@
         letter-spacing: 3;
         text-shadow: $tshadow-s;
     }
+    overflow: scroll;
 
-    @media only screen and (max-width: 78.75em), only screen and (max-height: 62.5em){
-        overflow: scroll;
+    @media only screen and (min-width: 87.5em) {
+        overflow: hidden;
     }
-
 }
 
 .service-box {
@@ -36,7 +36,7 @@
     min-width: 20rem;
     min-height: 20rem;
     overflow: hidden;
-    box-shadow: $bshadow-s;
+    // box-shadow: $bshadow-s; // ? Causes flickering on hover
     border-radius: 3px;
     position: relative;
     margin: 1.5rem;
@@ -83,7 +83,10 @@
         opacity: 1;
     }
 
+    @include respond(tab-port) {
+        flex: 0 0 40%;
+    }
     @include respond(phone) {
-        flex: 0 0 50%;
+        flex: 0 0 80%;
     }
 }
