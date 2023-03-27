@@ -21,6 +21,7 @@
 
   position: absolute;
   transition: transform 0.5s 0.1s ease;
+  will-change: transform;
 
   & > * { // ? all direct childern
     position: absolute;
@@ -83,6 +84,7 @@
   opacity: .5;
 
   transition: transform, opacity, .1s ease-in;
+  will-change: transform, opacity;
 
   &:hover {
     opacity: 1;
