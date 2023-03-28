@@ -42,7 +42,7 @@ export const mapView = function () {
         content: `
         <div class="popup-box">
           <div class="popup-box__img-box">
-            <img class="popup-box__img-box--img" src="${popupImg}">
+            <img class="popup-box__img-box--img" src="${popupImg}" loading="lazy">
           </div>
 
           <div class="popup-box__content-container">

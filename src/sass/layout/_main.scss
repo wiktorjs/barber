@@ -48,10 +48,10 @@
     align-content: center;
 
     &:has(> img:hover) img:not(:hover) {
-      @media only screen and (min-width: 37.5em) { // everything but phone
+      // @media only screen and (min-width: 37.5em) { // everything but phone
       filter: brightness(0.8) blur(1px);
       transform: scale(0.95);
-      }
+      // }
     }
 
     @include respond(tab-port) {
