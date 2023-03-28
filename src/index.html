@@ -35,25 +35,18 @@
     <!-- Own -->
     <link rel="stylesheet" href="./sass/main.scss" />
 
-    <script
-      defer
-      src="./js/script.js"
-      type="module"
-      charset="utf-8"
-    ></script>
+    <script defer src="./js/script.js" type="module" charset="utf-8"></script>
   </head>
 
   <body class="container">
-
     <!-- ! STICKY AND MOBILE NAVIGATION -->
     <div class="nav-menu__button">
-      <span class="nav-menu__button--top "></span>
-      <span class="nav-menu__button--mid "></span>
-      <span class="nav-menu__button--bottom "></span>
+      <span class="nav-menu__button--top"></span>
+      <span class="nav-menu__button--mid"></span>
+      <span class="nav-menu__button--bottom"></span>
     </div>
 
     <nav class="nav nav--sticky nav--hidden">
-
       <div class="nav-box">
         <ul class="nav-box__list">
           <p>YOB</p>
@@ -186,9 +179,10 @@
         <div id="carousel" class="carousel">
           <div class="slide-box">
             <img
-              class="slide-box__img"
-              src="./img/service1.jpg"
+              class="slide-box__img slide-box__img--lazy"
+              src="./img/service1-s.jpg"
               alt="service photo"
+              data-carousel-src="service1"
             />
             <div class="slide-box__content">
               <h4 class="slide-box__content-heading">Beard grooming</h4>
@@ -203,9 +197,10 @@
 
           <div class="slide-box">
             <img
-              class="slide-box__img"
-              src="./img/service2.jpg"
+              class="slide-box__img slide-box__img--lazy"
+              src="./img/service2-s.jpg"
               alt="service photo"
+              data-carousel-src="service2"
             />
             <div class="slide-box__content">
               <h4 class="slide-box__content-heading">Hairdressing</h4>
@@ -219,9 +214,10 @@
 
           <div class="slide-box">
             <img
-              class="slide-box__img"
-              src="./img/service3.jpg"
+              class="slide-box__img slide-box__img--lazy"
+              src="./img/service3-s.jpg"
               alt="service photo"
+              data-carousel-src="service3"
             />
             <div class="slide-box__content">
               <h4 class="slide-box__content-heading">Nails</h4>

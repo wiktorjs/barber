@@ -1,5 +1,5 @@
 .footer {
-    height: 30rem;
+    // height: max-content;
     background-color: $color-secondary-dark;
     padding: 5rem;
 
@@ -15,6 +15,7 @@
         justify-items: center;
         justify-content: center;
         list-style: none;
+        flex-wrap: wrap;
 
         & li {
             padding: 1rem;
@@ -47,6 +48,8 @@
         fill: $color-primary;
 
         transition: fill, .2s ease;
+        will-change: fill;
+        
         &:hover {
             fill: $color-tertiary;
         }

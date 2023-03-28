@@ -14,7 +14,7 @@ const copyrightNotice = function () {
 // ! ==== INITIALIZATION =====
 const init = function () {
   NavigationView.init();
-  CarouselView.init()
+  CarouselView.init();
   ModalView.init();
   mapView();
   copyrightNotice();
