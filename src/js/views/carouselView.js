@@ -16,7 +16,7 @@ class CarouselView {
   #touchend;
 
   // ! ===== ACTIVE STATE CONDITIONS =====
-  // Variable
+  // Variable responsible for event listeners response - if false, nothing will happen f.e. on arrow key press
   #carouselIsVisible = false;
   /** Observe whether there is at least 20% of carousel section visible */
   #carouselObserver = new IntersectionObserver(this.#observe.bind(this), {
@@ -63,7 +63,8 @@ class CarouselView {
       SLIDE_DURATION * 1000
     );
 
-    await wait(RESET_STATUS_BAR_SEC); // ? Not putting wait before setInterval to prevent users from rapdily spamming with slide changes and therefore glitching the carousel
+    await wait(RESET_STATUS_BAR_SEC);  // | Otherwise animation reset doesn't work
+    // ? Not putting wait before setInterval to prevent users from rapdily spamming with slide changes and therefore glitching the carousel
     this.#statusBar.style.animation = `move-status-bar ${SLIDE_DURATION}s infinite linear`;
   }
 
@@ -106,7 +107,7 @@ class CarouselView {
   #initEventListeners() {
     this.#parentEl.addEventListener('click', (e) => {
       if (!this.#carouselIsVisible) return;
-
+      
       const arrow = e.target.closest('.carousel__icon-box');
       if (!arrow) return;
 
@@ -141,18 +142,19 @@ class CarouselView {
     });
   }
 
+  #parentElWidth = this.#parentEl.getBoundingClientRect().width;
   #swipeSlides() {
-    // | when swiped left for at least 20px, go to the next slide
+    // | when swiped left for at least 1/7th of carousel width, go to the next slide
     if (
       this.#touchstart > this.#touchend &&
-      this.#touchstart - this.#touchend > 20
+      this.#touchstart - this.#touchend > this.#parentElWidth / 7
     )
       this.#nextSlide();
 
-    // | when swiped right for at least 20px, go to the previous slide
+    // | when swiped right for at least 1/7th of carousel width, go to the previous slide
     if (
       this.#touchstart < this.#touchend &&
-      this.#touchstart - this.#touchend < -20
+      this.#touchstart - this.#touchend < this.#parentElWidth / 7
     )
       this.#prevSlide();
   }
