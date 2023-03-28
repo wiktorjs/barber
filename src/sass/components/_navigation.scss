@@ -204,6 +204,11 @@
           }
         }
       }
+    } 
+
+    @include respond(tab-port) {
+      width: 100%;
+      left: 0;
     }
 
     @include respond(phone) {
