@@ -30,16 +30,15 @@ export const mapView = function () {
   ).addTo(map);
 
   const marker = L.marker(coords).addTo(map);
-  const popup = marker
-    .bindPopup(
-      L.popup({
-        minWidth: 150,
-        maxWidth: 400,
-        closeOnEscapeKey: false,
-        closeOnClick: false,
-        closeButton: false,
-        autoClose: false,
-        content: `
+  const popup = marker.bindPopup(
+    L.popup({
+      minWidth: 150,
+      maxWidth: 400,
+      closeOnEscapeKey: false,
+      closeOnClick: false,
+      closeButton: false,
+      autoClose: false,
+      content: `
         <div class="popup-box">
           <div class="popup-box__img-box">
             <img class="popup-box__img-box--img" src="${popupImg}" loading="lazy">
@@ -59,7 +58,6 @@ export const mapView = function () {
           </div>
         </div>
         `,
-      })
-    )
-    .openPopup();
+    })
+  );
 };

@@ -27,7 +27,7 @@
 
         @include respond(phone) {
           margin-bottom: 1rem;
-        } 
+        }
       }
     }
 
@@ -64,13 +64,19 @@
     }
 
     @include respond(phone) {
-      visibility: hidden;
-    } 
+      text-align: right;
+      display: none;
+    }
   }
-  
+
+  @include respond(tab-port) {
+    justify-content: stretch;
+  }
+
   @include respond(phone) {
     flex-direction: row-reverse;
-  } 
+    justify-content: center;
+  }
 
   &__logo-box {
     text-align: center;
@@ -92,6 +98,12 @@
     }
   }
 
+  &__contact-box {
+    @include respond(tab-port) {
+      display: none;
+    }
+  }
+
   &__contact-box p {
     color: $color-primary;
     text-align: end;
@@ -99,10 +111,6 @@
     font-size: 1rem;
     line-height: 1.3rem;
     text-shadow: $tshadow-s;
-
-    @include respond(tab-port) {
-      visibility: hidden;
-    }
   }
 
   // ! STICKY & MOBILE NAV
@@ -156,9 +164,7 @@
               margin-top: 2rem;
               margin-right: 0;
               font-size: 5rem;
-              visibility: visible;
             }
-
           }
 
           &:last-child {
@@ -199,12 +205,15 @@
           }
 
           @include respond(phone) {
-            visibility: visible;
             font-size: 2rem;
           }
         }
+
+        @include respond(phone) {
+          display: block;
+        }
       }
-    } 
+    }
 
     @include respond(tab-port) {
       width: 100%;
@@ -235,7 +244,7 @@
   border-radius: 5px;
   cursor: pointer;
   box-shadow: $bshadow-s;
-  transition: background-color, box-shadow, opacity, .2s ease-in;
+  transition: background-color, box-shadow, opacity, 0.2s ease-in;
   will-change: background-color, box-shadow;
 
   &.box--active {
@@ -251,7 +260,7 @@
     width: 50%;
     border-radius: 2px;
     background-color: $color-secondary-dark;
-   
+
     transform: rotate(0deg) translateX(-50%);
     transform-origin: left center;
     transition: transform, top, width, opacity, 0.25s ease-in-out;
@@ -278,7 +287,7 @@
   }
 
   &--bottom {
-    transform: translate(-50% -100%);;
+    transform: translate(-50% -100%);
     top: 65%;
 
     &.active {
@@ -290,7 +299,7 @@
   @include respond(phone) {
     visibility: visible;
     opacity: 1;
-  } 
+  }
 }
 
 .nav--hidden {
