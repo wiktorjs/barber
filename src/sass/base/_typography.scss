@@ -8,6 +8,13 @@ h1 {
     text-shadow: $tshadow-s;
     width: 80%;
 
+    @include respond(phone) {
+        font-size: 3.5rem;
+    }
+    @media only screen and (max-width: 16.875em){ // 270px
+        font-size: 3rem;
+    }
+
    & .highlight {
     color: currentColor;
     text-shadow: none;

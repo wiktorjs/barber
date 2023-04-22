@@ -4,11 +4,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
+    <meta name="keywords" content="Barber shop, Barbershop services, Barbering, Men's grooming, Men's haircuts, Men's hairstyles, Hair grooming, Haircuts, Hair styling, Shaving, Beard grooming, Spa treatments, Massage, Facials, Manicure, Pedicure, Nail care, Beauty services, Men's grooming products, Professional grooming, Experienced barbers, Quality grooming products, Relaxing atmosphere, Affordable prices" />
+    <meta name="description" content="Looking for a one-stop destination for all your grooming needs? YOB barber shop offers a range of services, including barbering, spa treatments, nail care, and hair grooming. Our team of experienced professionals are dedicated to providing you with the best possible experience, using only the highest quality products and tools. Whether you're in need of a fresh haircut, a relaxing massage, or a pampering nail treatment, we've got you covered. Come visit us and let us help you look and feel your best!" />
 
-    <title></title>
-    <!-- <link rel="icon" type="image/png" href="./img/favicon.png" /> -->
+    <title>YOB: Barbering, Spa, Nails, and Hair Grooming Services - Your One-Stop Beauty Destination</title>
+    <link rel="icon" type="image/png" href="./img/favicon.png" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -35,25 +35,18 @@
     <!-- Own -->
     <link rel="stylesheet" href="./sass/main.scss" />
 
-    <script
-      defer
-      src="./js/script.js"
-      type="module"
-      charset="utf-8"
-    ></script>
+    <script defer src="./js/script.js" type="module"></script>
   </head>
 
   <body class="container">
-
     <!-- ! STICKY AND MOBILE NAVIGATION -->
-    <div class="nav-menu__button">
-      <span class="nav-menu__button--top "></span>
-      <span class="nav-menu__button--mid "></span>
-      <span class="nav-menu__button--bottom "></span>
+    <div class="nav-menu__button" aria-label="Main Menu" aria-controls="mobile-navigation" aria-expanded="false">
+      <span class="nav-menu__button--top"></span>
+      <span class="nav-menu__button--mid"></span>
+      <span class="nav-menu__button--bottom"></span>
     </div>
 
-    <nav class="nav nav--sticky nav--hidden">
-
+    <nav class="nav nav--sticky nav--hidden" role="navigation" id="mobile-navigation">
       <div class="nav-box">
         <ul class="nav-box__list">
           <p>YOB</p>
@@ -77,7 +70,7 @@
     </nav>
     <!-- ! HEADER & NAVIGATION -->
     <header id="home" class="header">
-      <nav class="nav">
+      <nav class="nav" role="navigation">
         <div class="nav-box">
           <ul class="nav-box__list">
             <li class="nav-box__item">
@@ -114,8 +107,9 @@
       <div class="header__text-box">
         <div class="header__text-box--main">
           <h1>
-            Discovering your beauty
-            <span class="highlight">extraordinarily.</span>
+            Your one-stop 
+            <span class="highlight">beauty</span>
+            destination.
           </h1>
           <div class="header__btn-box u-mt-sm">
             <a class="btn btn--white u-mr-s" href="#"
@@ -186,9 +180,10 @@
         <div id="carousel" class="carousel">
           <div class="slide-box">
             <img
-              class="slide-box__img"
-              src="./img/service1.jpg"
-              alt="service photo"
+              class="slide-box__img slide-box__img--lazy"
+              src="./img/service1-s.jpg"
+              alt="Beard Grooming at YOB"
+              data-carousel-src="service1"
             />
             <div class="slide-box__content">
               <h4 class="slide-box__content-heading">Beard grooming</h4>
@@ -203,9 +198,10 @@
 
           <div class="slide-box">
             <img
-              class="slide-box__img"
-              src="./img/service2.jpg"
-              alt="service photo"
+              class="slide-box__img slide-box__img--lazy"
+              src="./img/service2-s.jpg"
+              alt="Hairdressing at YOB"
+              data-carousel-src="service2"
             />
             <div class="slide-box__content">
               <h4 class="slide-box__content-heading">Hairdressing</h4>
@@ -219,12 +215,13 @@
 
           <div class="slide-box">
             <img
-              class="slide-box__img"
-              src="./img/service3.jpg"
-              alt="service photo"
+              class="slide-box__img slide-box__img--lazy"
+              src="./img/service3-s.jpg"
+              alt="Nail Care at YOB"
+              data-carousel-src="service3"
             />
             <div class="slide-box__content">
-              <h4 class="slide-box__content-heading">Nails</h4>
+              <h4 class="slide-box__content-heading">Nail Care</h4>
               <p class="slide-box__content-text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Molestiae molestias consequatur sint atque fugiat, quisquam
@@ -236,13 +233,13 @@
           <div class="slide-status-bar"></div>
 
           <div class="carousel__icon-box carousel__icon-box--left">
-            <svg class="slide__arrow-icon slide__arrow-icon--left">
+            <svg class="slide__arrow-icon slide__arrow-icon--left" aria-label="Previous slide">
               <use href="./img/icons.svg#icon-arrow-left"></use>
             </svg>
           </div>
 
           <div class="carousel__icon-box carousel__icon-box--right">
-            <svg class="slide__arrow-icon slide__arrow-icon--right">
+            <svg class="slide__arrow-icon slide__arrow-icon--right" aria-label="Next slide">
               <use href="./img/icons.svg#icon-arrow-right"></use>
             </svg>
           </div>
@@ -252,6 +249,7 @@
           class="btn btn-tertiary u-mt-m btn-open-modal"
           href="#"
           data-type="services"
+          role="button"
           >See all services<span class="btn__icon-arrow">&rarr;</span></btn
         >
       </section>
@@ -262,16 +260,17 @@
         <div class="contact-box">
           <div class="contact-info">
             <div class="contact-info__text-box">
-              <svg class="contact-info__icon">
+              <svg aria-hidden="true" class="contact-info__icon">
                 <use href="./img/icons.svg#icon-location"></use>
               </svg>
+
               <p class="contact-info__text">
                 YOB Salon, Agrykola st., 00-460, Warsaw
               </p>
             </div>
 
             <div class="contact-info__text-box">
-              <svg class="contact-info__icon">
+              <svg aria-hidden="true" class="contact-info__icon">
                 <use href="./img/icons.svg#icon-clock"></use>
               </svg>
               <p class="contact-info__text">
@@ -281,21 +280,21 @@
             </div>
 
             <div class="contact-info__text-box">
-              <svg class="contact-info__icon">
+              <svg aria-hidden="true" class="contact-info__icon">
                 <use href="./img/icons.svg#icon-phone"></use>
               </svg>
               <p class="contact-info__text">123 456 789</p>
             </div>
 
             <div class="contact-info__text-box">
-              <svg class="contact-info__icon">
+              <svg aria-hidden="true" class="contact-info__icon">
                 <use href="./img/icons.svg#icon-phone"></use>
               </svg>
               <p class="contact-info__text">98 765 43 21</p>
             </div>
 
             <div class="contact-info__text-box">
-              <svg class="contact-info__icon">
+              <svg aria-hidden="true" class="contact-info__icon">
                 <use href="./img/icons.svg#icon-envelope"></use>
               </svg>
               <p class="contact-info__text">mail@domain.com</p>
@@ -303,11 +302,12 @@
             <button
               class="btn btn-tertiary btn-tertiary--form btn-open-modal"
               data-type="book"
+              role="button"
             >
               Book now<span class="btn__icon-arrow">&rarr;</span>
             </button>
           </div>
-          <div class="map" id="map"></div>
+          <div class="map" id="map" aria-hidden="true"></div>
         </div>
       </section>
     </main>
@@ -335,26 +335,26 @@
         </ul>
         <div class="footer__social-box">
           <a class="footer__icon-box" href="#">
-            <svg class="footer__icon">
+            <svg aria-hidden="true" class="footer__icon">
               <use href="./img/icons.svg#icon-facebook"></use>
             </svg>
           </a>
 
           <a class="footer__icon-box" href="#">
-            <svg class="footer__icon">
+            <svg aria-hidden="true" class="footer__icon">
               <use href="./img/icons.svg#icon-instagram"></use>
             </svg>
           </a>
 
           <a class="footer__icon-box" href="#">
-            <svg class="footer__icon">
+            <svg aria-hidden="true" class="footer__icon">
               <use href="./img/icons.svg#icon-tiktok"></use>
             </svg>
           </a>
         </div>
 
         <p class="copyright">
-          Copyright © by Wiktor Sienkiewicz. All rights reserved.
+          Copyright © 2023 by Wiktor Sienkiewicz. All rights reserved.
         </p>
       </div>
     </footer>
@@ -362,7 +362,7 @@
     <div class="overlay hidden">
       <div class="modal-parent">
         <div id="btn-close-modal" class="close-modal__icon-box">
-          <svg class="close-modal__icon">
+          <svg class="close-modal__icon" aria-label="Close popup">
             <use href="./img/icons.svg#icon-close"></use>
           </svg>
         </div>

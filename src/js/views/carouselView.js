@@ -1,5 +1,8 @@
 import { SLIDE_DURATION, RESET_STATUS_BAR_SEC } from '../config.js';
 import { wait } from '../helpers.js';
+import service1 from '../../img/service1.jpg';
+import service2 from '../../img/service2.jpg';
+import service3 from '../../img/service3.jpg';
 
 // ! Carousel
 class CarouselView {
@@ -12,8 +15,9 @@ class CarouselView {
   #touchstart;
   #touchend;
 
-  // | ===== STARTING CONDITIONS =====
-  #isIntersecting;
+  // ! ===== ACTIVE STATE CONDITIONS =====
+  // Variable responsible for event listeners response - if false, nothing will happen f.e. on arrow key press
+  #carouselIsVisible = false;
   /** Observe whether there is at least 20% of carousel section visible */
   #carouselObserver = new IntersectionObserver(this.#observe.bind(this), {
     root: null,
@@ -36,16 +40,16 @@ class CarouselView {
       SLIDE_DURATION * 1000
     );
     this.#statusBar.style.animation = `move-status-bar ${SLIDE_DURATION}s infinite linear`;
-    this.#isIntersecting = true;
+    this.#carouselIsVisible = true;
   }
 
   #stop() {
     clearInterval(this.#interval);
     this.#statusBar.style.animation = 'none';
-    this.#isIntersecting = false;
+    this.#carouselIsVisible = false;
   }
 
-  // | ===== GENERAL FUNCTIONS =====
+  // ! ===== GENERAL FUNCTIONS =====
 
   /**
    * Resets the time between each automatic slide change whenever user clicks on an arrow to manually change it.
@@ -59,11 +63,12 @@ class CarouselView {
       SLIDE_DURATION * 1000
     );
 
-    await wait(RESET_STATUS_BAR_SEC); // ? Not putting wait before setInterval to prevent users from rapdily spamming with slide changes and therefore glitching the carousel
+    await wait(RESET_STATUS_BAR_SEC);  // | Otherwise animation reset doesn't work
+    // ? Not putting wait before setInterval to prevent users from rapdily spamming with slide changes and therefore glitching the carousel
     this.#statusBar.style.animation = `move-status-bar ${SLIDE_DURATION}s infinite linear`;
   }
 
-  // | ===== SLIDE CHANGES =====
+  // ! ===== SLIDE CHANGES =====
   /**
    * Translates slides to display the one we want, usually take #curSlide variable as an argument
    * @param {number} slide defines to which slide you want to go, counting from 0
@@ -82,6 +87,7 @@ class CarouselView {
     if (this.#curSlide < 0) this.#curSlide = this.#slides.length - 1;
 
     this.#goToSlide(this.#curSlide);
+    this.#resetInterval();
   }
 
   /**
@@ -92,15 +98,16 @@ class CarouselView {
     if (this.#curSlide > this.#slides.length - 1) this.#curSlide = 0;
 
     this.#goToSlide(this.#curSlide);
+    this.#resetInterval();
   }
 
   /**
    * Adds event listeners to arrow click events and arrow key presses, called upon initialization
    */
-  #switchSlide() {
+  #initEventListeners() {
     this.#parentEl.addEventListener('click', (e) => {
-      if (!this.#isIntersecting) return;
-
+      if (!this.#carouselIsVisible) return;
+      
       const arrow = e.target.closest('.carousel__icon-box');
       if (!arrow) return;
 
@@ -108,27 +115,22 @@ class CarouselView {
         ? this.#prevSlide()
         : this.#nextSlide();
       //
-      this.#resetInterval();
     });
 
     document.documentElement.addEventListener(
       'keydown',
       ((e) => {
-        if (!this.#isIntersecting) return;
+        if (!this.#carouselIsVisible) return;
 
         if (e.key === 'ArrowLeft') {
           this.#prevSlide();
-          this.#resetInterval();
         }
         if (e.key === 'ArrowRight') {
           this.#nextSlide();
-          this.#resetInterval();
         }
       }).bind(this)
-    ); 
-  }
+    );
 
-  #touchSwipe() {
     this.#parentEl.addEventListener(
       'touchstart',
       (e) => (this.#touchstart = e.changedTouches[0].screenX)
@@ -140,27 +142,61 @@ class CarouselView {
     });
   }
 
+  #parentElWidth = this.#parentEl.getBoundingClientRect().width;
   #swipeSlides() {
-    // | when swiped left for at least 20px, go to the next slide
+    // | when swiped left for at least 1/7th of carousel width, go to the next slide
     if (
       this.#touchstart > this.#touchend &&
-      this.#touchstart - this.#touchend > 20
+      this.#touchstart - this.#touchend > this.#parentElWidth / 7
     )
       this.#nextSlide();
 
-    // | when swiped right for at least 20px, go to the previous slide
+    // | when swiped right for at least 1/7th of carousel width, go to the previous slide
     if (
       this.#touchstart < this.#touchend &&
-      this.#touchstart - this.#touchend < -20
+      this.#touchstart - this.#touchend < this.#parentElWidth / 7
     )
       this.#prevSlide();
   }
 
+  // ! ===== LAZY LOADING IMAGES =====
+  // Select every image
+  #carouselImages = document.querySelectorAll('img[data-carousel-src]');
+  
+  // Observer
+  #loadImagesObserver = new IntersectionObserver(this.#lazyLoadImages.bind(this), {
+    root: null,
+    rootMargin: `${this.#section.getBoundingClientRect().height / 5}px`,
+    threshold: 0,
+  })
+  
+  #lazyLoadImages(entries, observer) {
+    const [entry] = entries;
+    if (!entry.isIntersecting) return;
+
+    // Make services images array
+    const services = [service1, service2, service3];
+
+    this.#carouselImages.forEach((img, i) => {
+      // Assign high-resolution image to every slide
+      img.src = services[i];
+
+      // Remove blur when image loads
+      img.addEventListener('load', () =>
+        img.classList.remove('slide-box__img--lazy')
+      );
+    });
+
+    // Unobserve so that it only happens once per page load
+    observer.unobserve(this.#section);
+  }
+
+  
   init() {
-    this.#switchSlide();
+    this.#initEventListeners();
     this.#carouselObserver.observe(this.#section);
+    this.#loadImagesObserver.observe(this.#section);
     this.#goToSlide(0);
-    this.#touchSwipe();
   }
 }
 

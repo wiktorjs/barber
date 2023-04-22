@@ -13,7 +13,7 @@ export const servicesMarkup = `
     <h3 class="services__heading" style="flex: 1 0 100%">Our services</h3>
 
     <div class="service-box">
-    <img class="service-box__img" src="${service1}" alt="service photo" />
+    <img class="service-box__img" src="${service1}" alt="Grooming at YOB" />
     <div class="service-box__text-box">
         <h4>Beard grooming</h4>
         <p>
@@ -26,7 +26,7 @@ export const servicesMarkup = `
     </div>
 
     <div class="service-box">
-    <img class="service-box__img" src="${service2}" alt="service photo" />
+    <img class="service-box__img" src="${service2}" alt="Hairdressing at YOB" />
     <div class="service-box__text-box">
         <h4>Hairdressing</h4>
         <p>
@@ -36,7 +36,7 @@ export const servicesMarkup = `
     </div>
     </div>
     <div class="service-box">
-    <img class="service-box__img" src="${service3}" alt="service photo" />
+    <img class="service-box__img" src="${service3}" alt="Nails Care at YOB" />
     <div class="service-box__text-box">
         <h4>Nails</h4>
         <p>
@@ -46,7 +46,7 @@ export const servicesMarkup = `
     </div>
     </div>
     <div class="service-box">
-    <img class="service-box__img" src="${service4}" alt="service photo" />
+    <img class="service-box__img" src="${service4}" alt="SPA services at YOB" />
     <div class="service-box__text-box">
         <h4>SPA</h4>
         <p>
@@ -57,7 +57,7 @@ export const servicesMarkup = `
     </div>
     </div>
     <div class="service-box">
-    <img class="service-box__img" src="${service5}" alt="service photo" />
+    <img class="service-box__img" src="${service5}" alt="Facial treatments at YOB" />
     <div class="service-box__text-box">
         <h4>Facial treatments</h4>
         <p>
@@ -66,7 +66,7 @@ export const servicesMarkup = `
     </div>
     </div>
     <div class="service-box">
-    <img class="service-box__img" src="${service6}" alt="service photo" />
+    <img class="service-box__img" src="${service6}" alt="Waxing at YOB" />
     <div class="service-box__text-box">
         <h4>Waxing</h4>
         <p>
@@ -89,6 +89,8 @@ export const bookMarkup = `
         type="text"
         placeholder="First name"
         pattern="[A-Za-z]{3,}"
+        required
+        aria-required="true"
       />
       <label for="name" class="book__form-label">First name</label>
     </div>
@@ -100,6 +102,8 @@ export const bookMarkup = `
         type="email"
         placeholder="Email"
         pattern="[a-z0-8._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+        required
+        aria-required="true"
       />
       <label for="email" class="book__form-label">Email</label>
     </div>
