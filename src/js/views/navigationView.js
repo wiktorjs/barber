@@ -43,8 +43,11 @@ class NavigationView {
     [...this.#hamburgerBtn.children].forEach((span) => span.classList.toggle('active'));
 
     this.#stickyNav.classList.toggle('nav--hidden');
-
+  
     this.#hamburgerBtn.classList.toggle('box--active');
+ 
+    this.#hamburgerBtn.ariaExpanded = !this.#stickyNav.classList.contains('nav--hidden');
+
   }
 
   init() {

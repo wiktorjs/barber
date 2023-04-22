@@ -59,5 +59,5 @@ export const mapView = function () {
         </div>
         `,
     })
-  );
+  ).openPopup();
 };
