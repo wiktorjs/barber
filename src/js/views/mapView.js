@@ -1,4 +1,4 @@
-import popupImg from '../../img/hero-s.jpg';
+import popupImg from '../../img/hero-s.webp';
 import icons from '../../img/icons.svg';
 
 // todo CONFIGURE LEAFLET, regenerator-runtime
@@ -41,7 +41,7 @@ export const mapView = function () {
       content: `
         <div class="popup-box">
           <div class="popup-box__img-box">
-            <img class="popup-box__img-box--img" src="${popupImg}" loading="lazy">
+            <img class="popup-box__img-box--img" src="${popupImg}" loading="lazy" alt='YOB salon image' >
           </div>
 
           <div class="popup-box__content-container">

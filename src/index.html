@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Looking for a one-stop destination for all your grooming needs? YOB barber shop offers a range of services, including barbering, spa treatments, nail care, and hair grooming. Our team of experienced professionals are dedicated to providing you with the best possible experience, using only the highest quality products and tools. Whether you're in need of a fresh haircut, a relaxing massage, or a pampering nail treatment, we've got you covered. Come visit us and let us help you look and feel your best!" />
 
-    <title>YOB: Barbering, Spa, Nails, and Hair Grooming Services - Your One-Stop Beauty Destination</title>
+    <title>YOB | Barbering, Spa, Nails, and Hair Grooming Services - Your One-Stop Beauty Destination</title>
     <link rel="icon" type="image/png" href="./img/favicon.png" />
 
     <!-- Fonts -->
@@ -39,7 +39,7 @@
 
   <body class="container">
     <!-- ! STICKY AND MOBILE NAVIGATION -->
-    <div class="nav-menu__button" aria-label="Main Menu" aria-controls="mobile-navigation" aria-expanded="false">
+    <div class="nav-menu__button" role="button" aria-label="Main Menu" aria-controls="mobile-navigation" aria-expanded="false">
       <span class="nav-menu__button--top"></span>
       <span class="nav-menu__button--mid"></span>
       <span class="nav-menu__button--bottom"></span>
@@ -48,7 +48,7 @@
     <nav class="nav nav--sticky nav--hidden" role="navigation" id="mobile-navigation">
       <div class="nav-box">
         <ul class="nav-box__list">
-          <p>YOB</p>
+          <li class="nav-box__logo">YOB</li>
           <li class="nav-box__item">
             <a href="#home" class="nav-box__link">Home</a>
           </li>
@@ -61,9 +61,9 @@
           <li class="nav-box__item">
             <a href="#book" class="nav-box__link">Contact</a>
           </li>
-          <li class="nav-box__item">
+          <!-- <li class="nav-box__item">
             <a href="#" class="nav-box__link">Gallery</a>
-          </li>
+          </li> -->
         </ul>
       </div>
     </nav>
@@ -84,9 +84,9 @@
             <li class="nav-box__item">
               <a href="#book" class="nav-box__link">Contact</a>
             </li>
-            <li class="nav-box__item">
+            <!-- <li class="nav-box__item">
               <a href="#" class="nav-box__link">Gallery</a>
-            </li>
+            </li> -->
           </ul>
         </div>
 
@@ -156,17 +156,17 @@
 
         <div class="about__img-box">
           <img
-            src="./img/about1.jpg"
+            src="./img/about1-s.webp"
             alt="about image 1"
             class="about__img about__img--1"
           />
           <img
-            src="./img/about2.jpg"
+            src="./img/about2-s.webp"
             alt="about image 2"
             class="about__img about__img--2"
           />
           <img
-            src="./img/about3.jpg"
+            src="./img/about3-s.webp"
             alt="about image 3"
             class="about__img about__img--3"
           />
@@ -180,12 +180,12 @@
           <div class="slide-box">
             <img
               class="slide-box__img slide-box__img--lazy"
-              src="./img/service1-s.jpg"
+              src="./img/service1-s.webp"
               alt="Beard Grooming at YOB"
               data-carousel-src="service1"
             />
             <div class="slide-box__content">
-              <h4 class="slide-box__content-heading">Beard grooming</h4>
+              <p class="slide-box__content-heading">Beard grooming</h4>
               <p class="slide-box__content-text">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est
                 esse iure optio eveniet eius ut laboriosam vero, molestias
@@ -198,12 +198,12 @@
           <div class="slide-box">
             <img
               class="slide-box__img slide-box__img--lazy"
-              src="./img/service2-s.jpg"
+              src="./img/service2-s.webp"
               alt="Hairdressing at YOB"
               data-carousel-src="service2"
             />
             <div class="slide-box__content">
-              <h4 class="slide-box__content-heading">Hairdressing</h4>
+              <p class="slide-box__content-heading">Hairdressing</h4>
               <p class="slide-box__content-text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
                 esse magnam, vel repudiandae ducimus amet non cum at mollitia
@@ -215,12 +215,12 @@
           <div class="slide-box">
             <img
               class="slide-box__img slide-box__img--lazy"
-              src="./img/service3-s.jpg"
+              src="./img/service3-s.webp"
               alt="Nail Care at YOB"
               data-carousel-src="service3"
             />
             <div class="slide-box__content">
-              <h4 class="slide-box__content-heading">Nail Care</h4>
+              <p class="slide-box__content-heading">Nail Care</h4>
               <p class="slide-box__content-text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Molestiae molestias consequatur sint atque fugiat, quisquam
@@ -306,7 +306,7 @@
               Book now<span class="btn__icon-arrow">&rarr;</span>
             </button>
           </div>
-          <div class="map" id="map" aria-hidden="true"></div>
+          <div class="map" id="map"></div>
         </div>
       </section>
     </main>
@@ -326,26 +326,26 @@
             <a href="#services" class="nav-box__link">Services</a>
           </li>
           <li class="nav-box__item">
-            <a href="#" class="nav-box__link">Gallery</a>
-          </li>
-          <li class="nav-box__item">
             <a href="#" class="nav-box__link">Contact</a>
           </li>
+          <!-- <li class="nav-box__item">
+            <a href="#" class="nav-box__link">Gallery</a>
+          </li> -->
         </ul>
         <div class="footer__social-box">
-          <a class="footer__icon-box" href="#">
+          <a class="footer__icon-box" href="#" aria-label="Link to facebook page">
             <svg aria-hidden="true" class="footer__icon">
               <use href="./img/icons.svg#icon-facebook"></use>
             </svg>
           </a>
 
-          <a class="footer__icon-box" href="#">
+          <a class="footer__icon-box" href="#" aria-label="Link to instagram page">
             <svg aria-hidden="true" class="footer__icon">
               <use href="./img/icons.svg#icon-instagram"></use>
             </svg>
           </a>
 
-          <a class="footer__icon-box" href="#">
+          <a class="footer__icon-box" href="#" aria-label="Link to tiktok page">
             <svg aria-hidden="true" class="footer__icon">
               <use href="./img/icons.svg#icon-tiktok"></use>
             </svg>
@@ -353,7 +353,7 @@
         </div>
 
         <p class="copyright">
-          Copyright © 2023 by Wiktor Sienkiewicz. All rights reserved.
+          Copyright © 2023 by Wiktor Sienkiewicz.
         </p>
       </div>
     </footer>

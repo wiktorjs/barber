@@ -63,7 +63,8 @@
 
   &__img {
     height: 30rem;
-
+    width: auto;
+    object-fit: contain;
     border-radius: 5px;
     box-shadow: $bshadow-s;
 

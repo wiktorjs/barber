@@ -1,8 +1,8 @@
 import { SLIDE_DURATION, RESET_STATUS_BAR_SEC } from '../config.js';
 import { wait } from '../helpers.js';
-import service1 from '../../img/service1.jpg';
-import service2 from '../../img/service2.jpg';
-import service3 from '../../img/service3.jpg';
+import service1 from '../../img/service1.webp';
+import service2 from '../../img/service2.webp';
+import service3 from '../../img/service3.webp';
 
 // ! Carousel
 class CarouselView {
@@ -133,13 +133,13 @@ class CarouselView {
 
     this.#parentEl.addEventListener(
       'touchstart',
-      (e) => (this.#touchstart = e.changedTouches[0].screenX)
+      (e) => (this.#touchstart = e.changedTouches[0].screenX), {passive: true}
     );
 
     this.#parentEl.addEventListener('touchend', (e) => {
       this.#touchend = e.changedTouches[0].screenX;
       this.#swipeSlides();
-    });
+    }, {passive: true});
   }
 
   #parentElWidth = this.#parentEl.getBoundingClientRect().width;

@@ -8,7 +8,7 @@ import NavigationView from './views/navigationView.js';
 const copyrightNotice = function () {
   const parentEl = document.querySelector('.copyright');
   const year = new Date().getFullYear();
-  parentEl.textContent = `Copyright © ${year} by Wiktor Sienkiewicz. All rights reserved.`;
+  parentEl.textContent = `Copyright © ${year} by Wiktor Sienkiewicz.`;
 };
 
 // ! ==== INITIALIZATION =====

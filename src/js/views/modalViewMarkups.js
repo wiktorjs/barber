@@ -1,9 +1,9 @@
-import service1 from "../../img/service1-s.jpg";
-import service2 from "../../img/service2-s.jpg";
-import service3 from "../../img/service3-s.jpg";
-import service4 from "../../img/service4-s.jpg";
-import service5 from "../../img/service5-s.jpg";
-import service6 from "../../img/service6-s.jpg";
+import service1 from "../../img/service1-s.webp";
+import service2 from "../../img/service2-s.webp";
+import service3 from "../../img/service3-s.webp";
+import service4 from "../../img/service4-s.webp";
+import service5 from "../../img/service5-s.webp";
+import service6 from "../../img/service6-s.webp";
 
 import icons from "../../img/icons.svg";
 

@@ -53,6 +53,11 @@
     bottom: 0;
     padding: 4rem;
 
+    &-heading {
+      color: $color-tertiary;
+      font-weight: 600;
+    }
+
     &-text {
       font-size: 1.9rem;
       color: $color-primary;
